@@ -6,9 +6,15 @@
     <SharedGUID>{652BEA1F-64CB-4EF9-B04C-AE1E52E1E162}</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>reporterassist</Import_RootNamespace>
+    <Import_RootNamespace>Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)MyClass.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Attachment\Attachment.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Attachment\Image.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Attachment\Audio.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Attachment\Video.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Attachment\" />
   </ItemGroup>
 </Project>
