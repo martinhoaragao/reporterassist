@@ -80,5 +80,6 @@
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
+  <Import Project="..\reporterassist.projitems" Label="Shared" Condition="Exists('..\reporterassist.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
 </Project>
