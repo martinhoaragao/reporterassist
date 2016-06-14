@@ -13,6 +13,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Attachment\Image.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Attachment\Audio.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Attachment\Video.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Task.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)State.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Attachment\" />

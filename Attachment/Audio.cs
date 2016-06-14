@@ -15,9 +15,14 @@ namespace Shared {
 			timestamps.Add(timestamp);
 		}
 
-		public List<DateTime> getTimestamps()
+		// Gets and Sets
+
+		List<DateTime> Timestamps
 		{
-			return timestamps;
+			get
+			{
+				return timestamps;
+			}
 		}
 
 

@@ -10,20 +10,32 @@ namespace Shared {
 			path = _path;
 		}
 
-		public void setName(string _name) {
-			name = _name;
+		// Gets and Sets
+
+		string Name
+		{
+			get
+			{
+				return name;
+			}
+
+			set
+			{
+				name = value;
+			}
 		}
 
-		public void setPath(string _path) {
-			path = _path;
-		}
+		string Path
+		{
+			get
+			{
+				return path;
+			}
 
-		public string getName() {
-			return name;
-		}
-
-		public string getPath() {
-			return path;
+			set
+			{
+				path = value;
+			}
 		}
 
 	}
