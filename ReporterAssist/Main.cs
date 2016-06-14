@@ -1,4 +1,7 @@
 ﻿using AppKit;
+using System;
+using System.Drawing;
+using ObjCRuntime;
 
 namespace Mac
 {
