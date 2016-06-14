@@ -12,7 +12,7 @@ namespace Shared
 
 		// Gets and Sets
 
-		string Type
+		public string Type
 		{
 			get
 			{

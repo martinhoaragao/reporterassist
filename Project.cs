@@ -5,7 +5,6 @@ namespace Shared
 {
 	public class Project
 	{
-		private int id;
 		private string title;
 		private string description;
 		private DateTime begin;
@@ -16,41 +15,53 @@ namespace Shared
 		private List<Attachment> attachments;
 		private List<Coordinate> coordinates;
 
-		public Project(int _id, string _title, DateTime _begin)
+		public Project(string _title, DateTime _begin)
 		{
-			id = _id;
 			title = _title;
 			begin = _begin;
 			state = new State();
 		}
 
-		public void AddTask(Task task)
+		public void AddTask(int id, string title)
 		{
+			Task task = new Task(id, title);
 			tasks.Add(task);
 		}
 
-		public void AddAttachment(Attachment attachment)
+		public void RemoveTask(int index)
 		{
+			tasks.RemoveAt(index);
+		}
+
+		public void AddAudio(string name, string path)
+		{
+			Audio attachment = new Audio(name, path);
 			attachments.Add(attachment);
 		}
 
+		public void AddImage(string name, string path)
+		{
+			Image attachment = new Image(name, path);
+			attachments.Add(attachment);
+		}
+
+		public void AddVideo(string name, string path)
+		{
+			Video attachment = new Video(name, path);
+			attachments.Add(attachment);
+		}
+
+
 		public void AddCoordinate(float lat, float lon)
 		{
-			coordinates.Add(new Coordinate(lat,lon));
+			Coordinate coordinate = new Coordinate(lat, lon);
+			coordinates.Add(coordinate);
 		}
 
 
-		// Gets and Set
+		// Gets and Sets
 
-		int Id
-		{
-			get
-			{
-				return id;
-			}
-		}
-
-		string Title
+		public string Title
 		{
 			get
 			{
@@ -63,7 +74,7 @@ namespace Shared
 			}
 		}
 
-		string Description
+		public string Description
 		{
 			get
 			{
@@ -76,7 +87,7 @@ namespace Shared
 			}
 		}
 
-		DateTime Begin
+		public DateTime Begin
 		{
 			get
 			{
@@ -89,7 +100,7 @@ namespace Shared
 			}
 		}
 
-		DateTime End
+		public DateTime End
 		{
 			get
 			{
@@ -102,7 +113,7 @@ namespace Shared
 			}
 		}
 
-		State State
+		public State State
 		{
 			get
 			{
@@ -115,7 +126,7 @@ namespace Shared
 			}
 		}
 
-		List<Task> Tasks
+		public List<Task> Tasks
 		{
 			get
 			{
@@ -123,7 +134,7 @@ namespace Shared
 			}
 		}
 
-		List<Attachment> Attachments
+		public List<Attachment> Attachments
 		{
 			get
 			{
@@ -131,7 +142,7 @@ namespace Shared
 			}
 		}
 
-		List<Coordinate> Coordinates
+		public List<Coordinate> Coordinates
 		{
 			get
 			{

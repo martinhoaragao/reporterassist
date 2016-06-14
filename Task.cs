@@ -22,7 +22,7 @@ namespace Shared
 
 		// Gets and sets
 
-		string Title
+		public string Title
 		{
 			get
 			{
@@ -35,7 +35,7 @@ namespace Shared
 			}
 		}
 
-		string Description
+		public string Description
 		{
 			get
 			{
@@ -48,7 +48,7 @@ namespace Shared
 			}
 		}
 
-		State State
+		public State State
 		{
 			get
 			{

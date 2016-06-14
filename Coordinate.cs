@@ -14,7 +14,7 @@ namespace Shared
 
 		// Gets and Sets
 
-		float Lat
+		public float Lat
 		{
 			get
 			{
@@ -27,7 +27,7 @@ namespace Shared
 			}
 		}
 
-		float Lon
+		public float Lon
 		{
 			get
 			{
