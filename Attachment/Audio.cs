@@ -11,7 +11,7 @@ namespace Shared {
 			timestamps = new List<DateTime>();
 		}
 
-		public void markTimestamp(DateTime timestamp) {
+		public void MarkTimestamp(DateTime timestamp) {
 			timestamps.Add(timestamp);
 		}
 
