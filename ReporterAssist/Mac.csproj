@@ -81,6 +81,26 @@
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="GeneralMenu.cs" />
+    <Compile Include="GeneralMenu.designer.cs">
+      <DependentUpon>GeneralMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewWorkMenu.cs" />
+    <Compile Include="NewWorkMenu.designer.cs">
+      <DependentUpon>NewWorkMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TarefasMenu.cs" />
+    <Compile Include="TarefasMenu.designer.cs">
+      <DependentUpon>TarefasMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NovaTarefaMenu.cs" />
+    <Compile Include="NovaTarefaMenu.designer.cs">
+      <DependentUpon>NovaTarefaMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditarTarefaMenu.cs" />
+    <Compile Include="EditarTarefaMenu.designer.cs">
+      <DependentUpon>EditarTarefaMenu.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />

@@ -2,19 +2,17 @@
 namespace Shared
 {
 	public class Task {
-		private int idTask;
 		private string title;
 		private string description;
 		private State state;
 
-		public Task(int _idTask, string _title) 
+		public Task(int _id, string _title) 
 		{
-			idTask = _idTask;
 			title = _title;
 			state = new State();
 		}
 
-		public void update(string _title, string _description, State _state) 
+		public void Update(string _title, string _description, State _state) 
 		{
 			title = _title;
 			description = _description;
@@ -24,15 +22,7 @@ namespace Shared
 
 		// Gets and sets
 
-		int IdTask
-		{
-			get
-			{
-				return idTask;
-			}
-		}
-
-		string Title
+		public string Title
 		{
 			get
 			{
@@ -45,7 +35,7 @@ namespace Shared
 			}
 		}
 
-		string Description
+		public string Description
 		{
 			get
 			{
@@ -58,7 +48,7 @@ namespace Shared
 			}
 		}
 
-		State State
+		public State State
 		{
 			get
 			{

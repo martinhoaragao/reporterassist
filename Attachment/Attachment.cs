@@ -12,7 +12,7 @@ namespace Shared {
 
 		// Gets and Sets
 
-		string Name
+		public string Name
 		{
 			get
 			{
@@ -25,7 +25,7 @@ namespace Shared {
 			}
 		}
 
-		string Path
+		public string Path
 		{
 			get
 			{
