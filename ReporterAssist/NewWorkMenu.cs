@@ -12,5 +12,9 @@ namespace Mac
 		public NewWorkMenu (IntPtr handle) : base (handle)
 		{
 		}
+		public static string getTitulo()
+		{
+			return TrabalhoTitulo.StringValue;
+		}
 	}
 }

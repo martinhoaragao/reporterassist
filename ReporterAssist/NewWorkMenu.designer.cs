@@ -16,7 +16,7 @@ namespace Mac
 		AppKit.NSButton SaveNewWorkAction { get; set; }
 
 		[Outlet]
-		AppKit.NSTextField TrabalhoTitulo { get; set; }
+		static AppKit.NSTextField TrabalhoTitulo { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
