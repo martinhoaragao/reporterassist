@@ -2,6 +2,7 @@
 using Android.Widget;
 using Android.OS;
 using Android.Media;
+using Android.Speech;
 using Java.Lang;
 using System.Collections;
 using System.IO;
@@ -11,18 +12,20 @@ namespace RecordAudio
 	[Activity(Label = "Reporter Assist", MainLauncher = true, Icon = "@mipmap/icon")]
 	public class MainActivity : Activity
 	{
-		MediaRecorder recorder;
-		MediaPlayer player;
-		Button start;
-		Button stop;
-		Button timestamp;
-		ListView timestamps;
-		long startTimestamp;
-		int audioNumber = 0;
-		ArrayList stamps = new ArrayList();
+		MediaRecorder 		recorder;
+		MediaPlayer 			player;
+		Button 						start;
+		Button 						stop;
+		Button	 					timestamp;
+		ListView 					timestamps;
+		long 							startTimestamp;
+		SpeechRecognizer 	speechRecognizer;
+		int audioNumber 	= 0;
+		ArrayList stamps 	= new ArrayList();
+		
 
 		// Filepath of the reporter assist folder.
-		static string path = Environment.ExternalStorageDirectory.ToString() + "/ReporterAssist";
+		static string path 							= Environment.ExternalStorageDirectory.ToString() + "/ReporterAssist";
 		DirectoryInfo reporterAssistDir = new DirectoryInfo(path + "/");
 
 		protected override void OnCreate(Bundle savedInstanceState) {
@@ -31,39 +34,47 @@ namespace RecordAudio
 			// Set our view from the "main" layout resource
 			SetContentView(Resource.Layout.Main);
 
-			start 		= FindViewById<Button>(Resource.Id.start);
-			stop 		= FindViewById<Button>(Resource.Id.stop);
-			timestamp 	= FindViewById<Button>(Resource.Id.timestamp);
-			timestamps 	= FindViewById<ListView>(Resource.Id.timestamps);
+			// Get ui components and start speech recognizer.
+			start 						= FindViewById<Button>(Resource.Id.start);
+			stop 							= FindViewById<Button>(Resource.Id.stop);
+			timestamp 				= FindViewById<Button>(Resource.Id.timestamp);
+			timestamps 				= FindViewById<ListView>(Resource.Id.timestamps);
 
 			System.Diagnostics.Debug.WriteLine(reporterAssistDir.ToString());
 			reporterAssistDir.Create();
 
 			// Start button delegate.
 			start.Click += delegate {
-				stop.Enabled = !stop.Enabled;
-				start.Enabled = !start.Enabled;
+				stop.Enabled 			= !stop.Enabled;
+				start.Enabled 		= !start.Enabled;
 				timestamp.Enabled = !timestamp.Enabled;
 
+				// Configure recorder and start speech recognizer.
+				speechRecognizer 	= SpeechRecognizer.CreateSpeechRecognizer(BaseContext);
+				speechRecognizer.SetRecognitionListener(new SpeechListener());
 				recorder.SetAudioSource(AudioSource.Mic);
 				recorder.SetOutputFormat(OutputFormat.ThreeGpp);
 				recorder.SetAudioEncoder(AudioEncoder.AmrNb);
 				recorder.SetOutputFile(path + "/audio" + audioNumber + ".3gpp");
 				recorder.Prepare();
+				speechRecognizer.StartListening(Intent);
 				recorder.Start();
 
 				// Set initial timestamp and clean timestamps arraylist.
 				startTimestamp = JavaSystem.CurrentTimeMillis();
 				stamps.Clear();
+				
+				
 			};
 
 			// Stop button delegate.
 			stop.Click += delegate {
-				stop.Enabled = !stop.Enabled;
+				stop.Enabled 			= !stop.Enabled;
 				timestamp.Enabled = !timestamp.Enabled;	
 
 				recorder.Stop();
 				recorder.Reset();
+				speechRecognizer.StopListening();
 
 				player.SetDataSource(path + "/audio" + audioNumber + ".3gpp");
 				player.Prepare();
@@ -91,6 +102,10 @@ namespace RecordAudio
 
 				// Increase audio number.
 				audioNumber++;
+
+				// Show popup with success message.
+				Toast t = Toast.MakeText(BaseContext, "Gravação Guardada.", ToastLength.Short);
+				t.Show();
 			};
 
 			// Timestamp button delegate.
@@ -132,7 +147,32 @@ namespace RecordAudio
 			player = null;
 			recorder = null;
 		}
+			
+	}
 
+	public class SpeechListener : Object, IRecognitionListener {
+		public void OnBeginningOfSpeech() { System.Diagnostics.Debug.WriteLine("COMECEI"); }
+		
+		public void OnBufferReceived(byte[] bytes) {
+			for (int i = 0; i < bytes.Length; i++)
+				System.Diagnostics.Debug.WriteLine(bytes[i]);
+		}
+
+		public void OnEndOfSpeech() { System.Diagnostics.Debug.WriteLine("TERMINEI"); }
+		
+		public void OnError(SpeechRecognizerError error) {}
+		
+		public void OnEvent(int i, Bundle b) {}
+		
+		public void OnPartialResults(Bundle b) {}
+		
+		public void OnReadyForSpeech(Bundle b) {}
+		
+		public void OnResults(Bundle results) {
+			System.Diagnostics.Debug.WriteLine(results.ToString());
+		}
+		
+		public void OnRmsChanged(System.Single s) {}
 	}
 }
 
