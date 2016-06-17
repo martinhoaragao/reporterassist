@@ -19,7 +19,6 @@ namespace RecordAudio
 		Button	 					timestamp;
 		ListView 					timestamps;
 		long 							startTimestamp;
-		SpeechRecognizer 	speechRecognizer;
 		int audioNumber 	= 0;
 		ArrayList stamps 	= new ArrayList();
 		
@@ -40,7 +39,7 @@ namespace RecordAudio
 			timestamp 				= FindViewById<Button>(Resource.Id.timestamp);
 			timestamps 				= FindViewById<ListView>(Resource.Id.timestamps);
 
-			System.Diagnostics.Debug.WriteLine(reporterAssistDir.ToString());
+			// Create reporter assist directory.
 			reporterAssistDir.Create();
 
 			// Start button delegate.
@@ -49,22 +48,17 @@ namespace RecordAudio
 				start.Enabled 		= !start.Enabled;
 				timestamp.Enabled = !timestamp.Enabled;
 
-				// Configure recorder and start speech recognizer.
-				speechRecognizer 	= SpeechRecognizer.CreateSpeechRecognizer(BaseContext);
-				speechRecognizer.SetRecognitionListener(new SpeechListener());
+				// Configure recorder.
 				recorder.SetAudioSource(AudioSource.Mic);
 				recorder.SetOutputFormat(OutputFormat.ThreeGpp);
 				recorder.SetAudioEncoder(AudioEncoder.AmrNb);
 				recorder.SetOutputFile(path + "/audio" + audioNumber + ".3gpp");
 				recorder.Prepare();
-				speechRecognizer.StartListening(Intent);
 				recorder.Start();
 
 				// Set initial timestamp and clean timestamps arraylist.
 				startTimestamp = JavaSystem.CurrentTimeMillis();
 				stamps.Clear();
-				
-				
 			};
 
 			// Stop button delegate.
@@ -74,7 +68,6 @@ namespace RecordAudio
 
 				recorder.Stop();
 				recorder.Reset();
-				speechRecognizer.StopListening();
 
 				player.SetDataSource(path + "/audio" + audioNumber + ".3gpp");
 				player.Prepare();
@@ -148,31 +141,6 @@ namespace RecordAudio
 			recorder = null;
 		}
 			
-	}
-
-	public class SpeechListener : Object, IRecognitionListener {
-		public void OnBeginningOfSpeech() { System.Diagnostics.Debug.WriteLine("COMECEI"); }
-		
-		public void OnBufferReceived(byte[] bytes) {
-			for (int i = 0; i < bytes.Length; i++)
-				System.Diagnostics.Debug.WriteLine(bytes[i]);
-		}
-
-		public void OnEndOfSpeech() { System.Diagnostics.Debug.WriteLine("TERMINEI"); }
-		
-		public void OnError(SpeechRecognizerError error) {}
-		
-		public void OnEvent(int i, Bundle b) {}
-		
-		public void OnPartialResults(Bundle b) {}
-		
-		public void OnReadyForSpeech(Bundle b) {}
-		
-		public void OnResults(Bundle results) {
-			System.Diagnostics.Debug.WriteLine(results.ToString());
-		}
-		
-		public void OnRmsChanged(System.Single s) {}
 	}
 }
 
