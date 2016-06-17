@@ -41,20 +41,45 @@ namespace RecordAudio
 			}
 		}
 		
+		public partial class Drawable
+		{
+			
+			// aapt resource value: 0x7f020000
+			public const int icon = 2130837504;
+			
+			static Drawable()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Drawable()
+			{
+			}
+		}
+		
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050000
-			public const int start = 2131034112;
+			// aapt resource value: 0x7f060004
+			public const int frameLayout1 = 2131099652;
 			
-			// aapt resource value: 0x7f050001
-			public const int stop = 2131034113;
+			// aapt resource value: 0x7f060000
+			public const int linearLayout = 2131099648;
 			
-			// aapt resource value: 0x7f050002
-			public const int timestamp = 2131034114;
+			// aapt resource value: 0x7f060001
+			public const int start = 2131099649;
 			
-			// aapt resource value: 0x7f050003
-			public const int timestamps = 2131034115;
+			// aapt resource value: 0x7f060002
+			public const int stop = 2131099650;
+			
+			// aapt resource value: 0x7f060006
+			public const int textView1 = 2131099654;
+			
+			// aapt resource value: 0x7f060003
+			public const int timestamp = 2131099651;
+			
+			// aapt resource value: 0x7f060005
+			public const int timestamps = 2131099653;
 			
 			static Id()
 			{
@@ -69,8 +94,11 @@ namespace RecordAudio
 		public partial class Layout
 		{
 			
-			// aapt resource value: 0x7f030000
-			public const int Main = 2130903040;
+			// aapt resource value: 0x7f040000
+			public const int Main = 2130968576;
+			
+			// aapt resource value: 0x7f040001
+			public const int SampleFragment = 2130968577;
 			
 			static Layout()
 			{
@@ -85,8 +113,8 @@ namespace RecordAudio
 		public partial class Mipmap
 		{
 			
-			// aapt resource value: 0x7f020000
-			public const int Icon = 2130837504;
+			// aapt resource value: 0x7f030000
+			public const int Icon = 2130903040;
 			
 			static Mipmap()
 			{
@@ -101,11 +129,11 @@ namespace RecordAudio
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040001
-			public const int app_name = 2130968577;
+			// aapt resource value: 0x7f050001
+			public const int app_name = 2131034113;
 			
-			// aapt resource value: 0x7f040000
-			public const int hello = 2130968576;
+			// aapt resource value: 0x7f050000
+			public const int hello = 2131034112;
 			
 			static String()
 			{
