@@ -4,23 +4,6 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:id="@+id/linearLayout">
-    <Button
-        android:id="@+id/start"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="INICIAR GRAVAÇÃO" />
-    <Button
-        android:id="@+id/stop"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:enabled="false"
-        android:text="TERMINAR" />
-    <Button
-        android:text="Criar TimeStamp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/timestamp"
-        android:enabled="false" />
     <FrameLayout
         android:minWidth="25px"
         android:minHeight="25px"

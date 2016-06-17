@@ -4,5 +4,9 @@
 	<uses-permission android:name="android.permission.RECORD_AUDIO" />
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-	<application android:allowBackup="true" android:icon="@drawable/icon" android:label="@string/app_name" android:theme="@android:style/Theme.Material.Light"></application>
+	<application android:allowBackup="true" android:icon="@drawable/icon" android:label="@string/app_name" android:theme="@android:style/Theme.Material.Light">
+    <!-- Put your Google Maps V2 API Key here. -->
+    <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyCbZTP5hTcCe0LIle2X0I9ffhnVd6efUMg" />
+    <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+  </application>
 </manifest>
