@@ -19,6 +19,17 @@ namespace Shared
 		{
 			title = _title;
 			begin = _begin;
+			description = null;
+			end = new DateTime();
+			state = new State();
+		}
+
+		public Project(string _title, string _description, DateTime _begin, DateTime _end)
+		{
+			title = _title;
+			begin = _begin;
+			description = _description;
+			end = _end; 
 			state = new State();
 		}
 

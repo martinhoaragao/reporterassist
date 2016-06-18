@@ -665,377 +665,286 @@
             </objects>
             <point key="canvasLocation" x="-502" y="282"/>
         </scene>
-        <!--Editar Tarefa Menu-->
-        <scene sceneID="hSa-Ae-kC9">
-            <objects>
-                <viewController id="7We-er-Ljz" customClass="EditarTarefaMenu" sceneMemberID="viewController">
-                    <view key="view" id="FAL-cg-t5k">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yMG-Jk-fOR">
-                                <rect key="frame" x="196" y="13" width="89" height="32"/>
-                                <buttonCell key="cell" type="push" title="VOLTAR" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YiB-gD-qH2">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <segue destination="WwN-Kd-wZO" kind="show" id="krp-hv-LHy"/>
-                                </connections>
-                            </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vo2-vR-gCs">
-                                <rect key="frame" x="222" y="233" width="42" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Tarefa" id="m3F-su-tTP">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                        </subviews>
-                    </view>
-                </viewController>
-                <customObject id="tUW-cr-prM" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1142" y="674"/>
-        </scene>
-        <!--Tarefas Menu-->
-        <scene sceneID="ag1-aH-JJt">
-            <objects>
-                <viewController id="WwN-Kd-wZO" customClass="TarefasMenu" sceneMemberID="viewController">
-                    <view key="view" id="5AH-Ni-jdr">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UR3-UB-wef">
-                                <rect key="frame" x="14" y="13" width="452" height="32"/>
-                                <buttonCell key="cell" type="push" title="VOLTAR" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="cXJ-SN-TiW">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <segue destination="jFN-9U-QJh" kind="show" id="ZZ4-8f-yDJ"/>
-                                </connections>
-                            </button>
-                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VhT-4v-oEQ">
-                                <rect key="frame" x="183" y="197" width="116" height="26"/>
-                                <popUpButtonCell key="cell" type="push" title="Tarefa1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="3e9-k3-bNz" id="iNw-RG-Kb9">
-                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu"/>
-                                    <menu key="menu" id="uha-7T-R3Y">
-                                        <items>
-                                            <menuItem title="Tarefa1" state="on" id="3e9-k3-bNz">
-                                                <string key="keyEquivalent" base64-UTF8="YES">
-DQ
-</string>
-                                                <modifierMask key="keyEquivalentModifierMask"/>
-                                            </menuItem>
-                                            <menuItem title="Tarefa2" id="ueJ-ba-geQ"/>
-                                            <menuItem title="Tarefa3" id="MEp-bT-McN"/>
-                                        </items>
-                                    </menu>
-                                </popUpButtonCell>
-                            </popUpButton>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Im-QB-UKm">
-                                <rect key="frame" x="193" y="152" width="88" height="32"/>
-                                <buttonCell key="cell" type="push" title="CRIAR" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yLM-1x-Af2">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <segue destination="30E-hO-g57" kind="show" id="K4m-iV-6cK"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3bs-BS-S4K">
-                                <rect key="frame" x="193" y="108" width="88" height="32"/>
-                                <buttonCell key="cell" type="push" title="EDITAR" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="G3I-hS-gEH">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <segue destination="7We-er-Ljz" kind="show" id="WXC-AQ-EA3"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V2A-Qu-Vf5">
-                                <rect key="frame" x="193" y="59" width="88" height="32"/>
-                                <buttonCell key="cell" type="push" title="REMOVER" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="FmN-RA-1eT">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                        </subviews>
-                    </view>
-                    <connections>
-                        <outlet property="EditarTarefaAction" destination="3bs-BS-S4K" id="Hs4-wX-KLh"/>
-                        <outlet property="NovaTarefaAction" destination="8Im-QB-UKm" id="u42-Q1-SH8"/>
-                        <outlet property="RemoverTarefarAction" destination="V2A-Qu-Vf5" id="KwX-Xd-4kD"/>
-                    </connections>
-                </viewController>
-                <customObject id="5zJ-0Y-C83" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-535" y="674"/>
-        </scene>
-        <!--Nova Tarefa Menu-->
-        <scene sceneID="ENe-rp-4aQ">
-            <objects>
-                <viewController id="30E-hO-g57" customClass="NovaTarefaMenu" sceneMemberID="viewController">
-                    <view key="view" id="TPv-mp-wT8">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dW8-RW-0fh">
-                                <rect key="frame" x="201" y="13" width="79" height="32"/>
-                                <buttonCell key="cell" type="push" title="CRIAR" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="n2i-V9-l8u">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <segue destination="WwN-Kd-wZO" kind="show" id="WDK-4D-nwu"/>
-                                </connections>
-                            </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZO4-1m-Kpk">
-                                <rect key="frame" x="18" y="203" width="39" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Título" id="EMC-gy-q6G">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gKa-hk-4QL">
-                                <rect key="frame" x="18" y="100" width="65" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Descrição" id="BfU-7Y-0rS">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n6y-SL-rjI">
-                                <rect key="frame" x="219" y="200" width="227" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="2Mc-kq-wf3">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hTC-ob-qFW">
-                                <rect key="frame" x="219" y="97" width="227" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="VFt-a4-uoO">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                        </subviews>
-                    </view>
-                </viewController>
-                <customObject id="RV7-fQ-AqV" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-535" y="1044"/>
-        </scene>
-        <!--View Controller-->
+        <!--View-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mzi-4v-Xwf">
-                                <rect key="frame" x="201" y="13" width="80" height="32"/>
-                                <buttonCell key="cell" type="push" title="LOGIN" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="02R-8C-Dgy">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <segue destination="jFN-9U-QJh" kind="show" id="KUJ-im-ixX"/>
-                                </connections>
-                            </button>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Iz-HU-sf9">
-                                <rect key="frame" x="192" y="193" width="96" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="USERNAME" drawsBackground="YES" id="aZ7-LP-DCb">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <secureTextField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TbG-gg-4HL">
-                                <rect key="frame" x="192" y="114" width="96" height="22"/>
-                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" title="PASSWORD" drawsBackground="YES" usesSingleLineMode="YES" id="Xtu-FG-iYg">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                    <allowedInputSourceLocales>
-                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
-                                    </allowedInputSourceLocales>
-                                </secureTextFieldCell>
-                            </secureTextField>
-                        </subviews>
-                    </view>
-                </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="49" y="282"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Tvf-b6-ynj">
-            <objects>
-                <viewController id="jFN-9U-QJh" sceneMemberID="viewController">
-                    <view key="view" id="lYu-4B-e6x" customClass="GeneralMenu">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <viewController id="XfG-lQ-9wD" customClass="View" sceneMemberID="viewController">
+                    <view key="view" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="537" height="338"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KVK-tm-xBA">
-                                <rect key="frame" x="125" y="168" width="232" height="26"/>
-                                <popUpButtonCell key="cell" type="push" title="Trabalho 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="EUI-aE-8NJ" id="F6Z-6k-RYu">
-                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu"/>
-                                    <menu key="menu" id="h1W-q3-ApL">
-                                        <items>
-                                            <menuItem title="Trabalho 1" state="on" id="EUI-aE-8NJ"/>
-                                            <menuItem title="Trabalho 2" id="mUg-AG-6gT"/>
-                                            <menuItem title="Trabalho 3" id="5y5-lr-iYO"/>
-                                        </items>
-                                    </menu>
-                                </popUpButtonCell>
-                            </popUpButton>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c5h-XR-i4x">
-                                <rect key="frame" x="121" y="110" width="110" height="32"/>
-                                <buttonCell key="cell" type="push" title="TRABALHO" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iwX-oj-Ype">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <segue destination="WwN-Kd-wZO" kind="show" id="4Qd-FK-Uh8"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nbp-lm-NSb">
-                                <rect key="frame" x="250" y="110" width="110" height="32"/>
-                                <buttonCell key="cell" type="push" title="REMOVER" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pil-ui-0qh">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cUQ-UA-Q21">
-                                <rect key="frame" x="-6" y="13" width="492" height="32"/>
-                                <buttonCell key="cell" type="push" title="+ CRIAR NOVO TRABALHO" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="PFS-oy-pkW">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                    <connections>
-                                        <action selector="NewWorkAction:" target="lYu-4B-e6x" id="4zP-ws-Kyk"/>
-                                    </connections>
-                                </buttonCell>
-                                <connections>
-                                    <segue destination="JX6-uJ-OA4" kind="popover" popoverAnchorView="cUQ-UA-Q21" popoverBehavior="t" preferredEdge="maxY" id="b6K-tb-aCa"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                    </view>
-                </viewController>
-                <customObject id="FKl-S3-oA7" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="49" y="674"/>
-        </scene>
-        <!--New Work Menu-->
-        <scene sceneID="9U5-KP-6nA">
-            <objects>
-                <viewController id="JX6-uJ-OA4" customClass="NewWorkMenu" sceneMemberID="viewController">
-                    <view key="view" id="bGm-fx-9Tv">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Fi-6T-Xew">
-                                <rect key="frame" x="196" y="13" width="89" height="32"/>
-                                <buttonCell key="cell" type="push" title="VOLTAR" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GX4-Db-lez">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <segue destination="jFN-9U-QJh" kind="show" id="pJe-Jq-ec4"/>
-                                </connections>
-                            </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5nz-WZ-Tyy">
-                                <rect key="frame" x="18" y="233" width="39" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Titulo" id="HzK-FA-8Us">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rke-Ck-a4u">
-                                <rect key="frame" x="18" y="178" width="65" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Descrição" id="J6K-5Q-KHb">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wqg-Ip-su4">
-                                <rect key="frame" x="18" y="127" width="87" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Data de inicio" id="dZo-gX-28x">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yuM-Ms-AVR">
-                                <rect key="frame" x="18" y="81" width="74" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Data de fim" id="gM6-29-5mp">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <datePicker verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Flv-on-wU1">
-                                <rect key="frame" x="202" y="78" width="99" height="27"/>
-                                <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="Z3c-Q7-Wzk">
-                                    <font key="font" metaFont="system"/>
-                                    <date key="date" timeIntervalSinceReferenceDate="487868400">
-                                        <!--2016-06-17 15:00:00 +0000-->
-                                    </date>
-                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                </datePickerCell>
-                            </datePicker>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ziC-cK-9sd">
-                                <rect key="frame" x="202" y="230" width="193" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="uxh-mf-1W0">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FrY-NQ-hBF">
-                                <rect key="frame" x="202" y="178" width="193" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="BLt-wi-xmp">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <datePicker verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JL5-8A-P0v">
-                                <rect key="frame" x="202" y="124" width="99" height="27"/>
-                                <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="rXF-ol-err">
-                                    <font key="font" metaFont="system"/>
-                                    <date key="date" timeIntervalSinceReferenceDate="-214390800">
-                                        <!--1994-03-17 15:00:00 +0000-->
-                                    </date>
-                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                </datePickerCell>
-                            </datePicker>
+                            <tabView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rTZ-VO-dGT">
+                                <rect key="frame" x="-16" y="-10" width="561" height="354"/>
+                                <font key="font" metaFont="system"/>
+                                <tabViewItems>
+                                    <tabViewItem label="Login" identifier="1" id="2Ug-s6-YHG">
+                                        <view key="view" id="AP2-lf-8Hf">
+                                            <rect key="frame" x="10" y="33" width="541" height="308"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FN4-QD-omV">
+                                                    <rect key="frame" x="23" y="250" width="66" height="17"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Username" id="COU-fE-hBn">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dOJ-F9-cAi">
+                                                    <rect key="frame" x="23" y="147" width="63" height="17"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Password" id="36d-pA-dHE">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <secureTextField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vP8-n6-h6I">
+                                                    <rect key="frame" x="211" y="144" width="245" height="22"/>
+                                                    <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="G27-oi-qbg">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        <allowedInputSourceLocales>
+                                                            <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                                        </allowedInputSourceLocales>
+                                                    </secureTextFieldCell>
+                                                </secureTextField>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JIe-dO-VXg">
+                                                    <rect key="frame" x="229" y="10" width="83" height="32"/>
+                                                    <buttonCell key="cell" type="push" title="Login" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Yg9-0w-c0n">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="LoginAction:" target="XfG-lQ-9wD" id="aY1-V2-QD7"/>
+                                                    </connections>
+                                                </button>
+                                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="82n-Cm-f2K">
+                                                    <rect key="frame" x="211" y="247" width="245" height="22"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="XUC-13-cGe">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wqE-Og-U74">
+                                                    <rect key="frame" x="23" y="46" width="503" height="17"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="Xz0-9B-XPw">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8oL-zI-qi0">
+                                                    <rect key="frame" x="229" y="10" width="83" height="32"/>
+                                                    <buttonCell key="cell" type="push" title="Logout" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BIR-em-zsf">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="LogoutAction:" target="XfG-lQ-9wD" id="iRQ-2j-KPt"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                    </tabViewItem>
+                                    <tabViewItem label="Trabalho" identifier="2" id="pXD-MF-vg4">
+                                        <view key="view" ambiguous="YES" id="uq6-oW-2hi">
+                                            <rect key="frame" x="10" y="33" width="541" height="308"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <tabView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cq9-cw-TzA">
+                                                    <rect key="frame" x="-11" y="-13" width="560" height="329"/>
+                                                    <font key="font" metaFont="system"/>
+                                                    <tabViewItems>
+                                                        <tabViewItem label="Trabalhos" identifier="1" id="ZCR-T8-G71">
+                                                            <view key="view" id="5hW-AS-Bve">
+                                                                <rect key="frame" x="10" y="33" width="540" height="283"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <subviews>
+                                                                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dMb-gB-aLL">
+                                                                        <rect key="frame" x="104" y="167" width="333" height="26"/>
+                                                                        <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="27Z-H4-Agn" id="Zva-5d-A3L">
+                                                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                                            <font key="font" metaFont="menu"/>
+                                                                            <menu key="menu" id="nJc-rv-gUd">
+                                                                                <items>
+                                                                                    <menuItem title="Item 1" state="on" id="27Z-H4-Agn"/>
+                                                                                    <menuItem title="Item 2" id="bb6-bY-8e4"/>
+                                                                                    <menuItem title="Item 3" id="cxI-VY-uhl"/>
+                                                                                </items>
+                                                                            </menu>
+                                                                        </popUpButtonCell>
+                                                                    </popUpButton>
+                                                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8cY-Hv-rPu">
+                                                                        <rect key="frame" x="197" y="82" width="147" height="32"/>
+                                                                        <buttonCell key="cell" type="push" title="Visualizar Tarefas" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZsM-8G-dKK">
+                                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                        <connections>
+                                                                            <action selector="VerTarefasAction:" target="XfG-lQ-9wD" id="zQq-iE-xso"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </view>
+                                                        </tabViewItem>
+                                                        <tabViewItem label="AdicionarTrabalhos" identifier="2" id="Dg8-a6-K4X">
+                                                            <view key="view" ambiguous="YES" id="PHo-bV-rkW">
+                                                                <rect key="frame" x="10" y="33" width="540" height="283"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <subviews>
+                                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k4I-v2-ztZ">
+                                                                        <rect key="frame" x="33" y="246" width="39" height="17"/>
+                                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Título" id="NCm-7b-uCu">
+                                                                            <font key="font" metaFont="system"/>
+                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                        </textFieldCell>
+                                                                    </textField>
+                                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lUH-26-DQM">
+                                                                        <rect key="frame" x="33" y="187" width="65" height="17"/>
+                                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Descrição" id="n3h-yv-Tpf">
+                                                                            <font key="font" metaFont="system"/>
+                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                        </textFieldCell>
+                                                                    </textField>
+                                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s6z-Iv-ZWH">
+                                                                        <rect key="frame" x="33" y="129" width="68" height="17"/>
+                                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Data Início" id="F8v-2h-5sF">
+                                                                            <font key="font" metaFont="system"/>
+                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                        </textFieldCell>
+                                                                    </textField>
+                                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NLM-qG-z6R">
+                                                                        <rect key="frame" x="33" y="80" width="58" height="17"/>
+                                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Data Fim" id="aIT-po-DQN">
+                                                                            <font key="font" metaFont="system"/>
+                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                        </textFieldCell>
+                                                                    </textField>
+                                                                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZN6-Au-sg4">
+                                                                        <rect key="frame" x="197" y="243" width="300" height="22"/>
+                                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="R9W-YT-1y3">
+                                                                            <font key="font" metaFont="system"/>
+                                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                        </textFieldCell>
+                                                                    </textField>
+                                                                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kap-gu-atf">
+                                                                        <rect key="frame" x="197" y="184" width="300" height="22"/>
+                                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="AZP-tW-XOn">
+                                                                            <font key="font" metaFont="system"/>
+                                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                        </textFieldCell>
+                                                                    </textField>
+                                                                    <datePicker verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="npG-9Z-wFJ">
+                                                                        <rect key="frame" x="197" y="77" width="99" height="27"/>
+                                                                        <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="T1d-Hz-Eqf">
+                                                                            <font key="font" metaFont="system"/>
+                                                                            <date key="date" timeIntervalSinceReferenceDate="488127600">
+                                                                                <!--2016-06-20 15:00:00 +0000-->
+                                                                            </date>
+                                                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                        </datePickerCell>
+                                                                    </datePicker>
+                                                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="olV-zh-e0h">
+                                                                        <rect key="frame" x="29" y="10" width="474" height="32"/>
+                                                                        <buttonCell key="cell" type="push" title="+ Criar novo Trabalho" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yst-jz-0lZ">
+                                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                        <connections>
+                                                                            <action selector="NovoTrabalhoAction:" target="XfG-lQ-9wD" id="KgZ-rR-EWS"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bJn-fW-A6i">
+                                                                        <rect key="frame" x="329" y="79" width="61" height="18"/>
+                                                                        <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="IPs-H3-Li1">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <datePicker verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gS2-uS-4uI">
+                                                                        <rect key="frame" x="197" y="126" width="99" height="27"/>
+                                                                        <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="jac-xf-6iH">
+                                                                            <font key="font" metaFont="system"/>
+                                                                            <date key="date" timeIntervalSinceReferenceDate="-214390800">
+                                                                                <!--1994-03-17 15:00:00 +0000-->
+                                                                            </date>
+                                                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                        </datePickerCell>
+                                                                    </datePicker>
+                                                                </subviews>
+                                                            </view>
+                                                        </tabViewItem>
+                                                        <tabViewItem label="Tarefas" identifier="" id="7lY-rm-fVf">
+                                                            <view key="view" id="eLk-fO-oNU">
+                                                                <rect key="frame" x="10" y="33" width="540" height="283"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <subviews>
+                                                                    <tabView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dX2-VQ-O7R">
+                                                                        <rect key="frame" x="1" y="-8" width="550" height="297"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                        <tabViewItems>
+                                                                            <tabViewItem label="Tarefas" identifier="1" id="zAV-Rj-znL">
+                                                                                <view key="view" id="YLO-gf-fnv">
+                                                                                    <rect key="frame" x="10" y="33" width="530" height="251"/>
+                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                                </view>
+                                                                            </tabViewItem>
+                                                                            <tabViewItem label="Anexos" identifier="2" id="r78-65-a2A">
+                                                                                <view key="view" id="7fJ-Ke-oRb">
+                                                                                    <rect key="frame" x="10" y="33" width="530" height="251"/>
+                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                                </view>
+                                                                            </tabViewItem>
+                                                                            <tabViewItem label="Adicionar Tarefas" identifier="" id="ewI-Qs-tOu">
+                                                                                <view key="view" ambiguous="YES" id="htH-PW-8gJ">
+                                                                                    <rect key="frame" x="10" y="33" width="530" height="251"/>
+                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                                </view>
+                                                                            </tabViewItem>
+                                                                        </tabViewItems>
+                                                                    </tabView>
+                                                                </subviews>
+                                                            </view>
+                                                        </tabViewItem>
+                                                    </tabViewItems>
+                                                </tabView>
+                                            </subviews>
+                                        </view>
+                                    </tabViewItem>
+                                </tabViewItems>
+                            </tabView>
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="SaveNewWorkAction" destination="5Fi-6T-Xew" id="e2B-8R-W6t"/>
-                        <outlet property="TrabalhoTitulo" destination="ziC-cK-9sd" id="c9J-U5-8HR"/>
+                        <outlet property="CheckFim" destination="bJn-fW-A6i" id="u6C-Xm-uT9"/>
+                        <outlet property="LoginAction" destination="JIe-dO-VXg" id="3FF-Ge-e0j"/>
+                        <outlet property="LoginButton" destination="JIe-dO-VXg" id="oAy-ya-lnE"/>
+                        <outlet property="LoginLabel" destination="wqE-Og-U74" id="4JQ-yM-N0z"/>
+                        <outlet property="LogoutButton" destination="8oL-zI-qi0" id="XOm-A7-2DH"/>
+                        <outlet property="NovoTrabalhoDescricao" destination="Kap-gu-atf" id="seA-S9-Q7P"/>
+                        <outlet property="NovoTrabalhoFim" destination="npG-9Z-wFJ" id="XEf-0t-pGr"/>
+                        <outlet property="NovoTrabalhoInicio" destination="gS2-uS-4uI" id="CzR-IE-4j6"/>
+                        <outlet property="NovoTrabalhoTitulo" destination="ZN6-Au-sg4" id="xas-rN-0O5"/>
+                        <outlet property="PasswordText" destination="vP8-n6-h6I" id="NQO-kC-tjc"/>
+                        <outlet property="TarefasView" destination="dX2-VQ-O7R" id="47X-Vs-vaK"/>
+                        <outlet property="TrabalhosPop" destination="Zva-5d-A3L" id="FOm-3e-ngN"/>
+                        <outlet property="TrabalhosView" destination="cq9-cw-TzA" id="aUU-uy-usA"/>
+                        <outlet property="UsernameText" destination="82n-Cm-f2K" id="MD9-Bj-o4d"/>
                     </connections>
                 </viewController>
-                <customObject id="4wX-P4-w7F" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="49" y="1044"/>
+            <point key="canvasLocation" x="77.5" y="316"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="pJe-Jq-ec4"/>
-        <segue reference="krp-hv-LHy"/>
-    </inferredMetricsTieBreakers>
 </document>

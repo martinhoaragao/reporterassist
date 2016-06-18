@@ -10,6 +10,9 @@ namespace Shared
 
 		public ReporterAssist()
 		{
+			projects = new List<Project>();
+			users = new Dictionary<string, Professional>();
+			connectedUser = null;
 		}
 
 		public bool LogIn(string mail, string password)
@@ -37,6 +40,12 @@ namespace Shared
 			projects.Add(project);
 		}
 
+		public void AddProject(string _title, string _description, DateTime _begin, DateTime _end)
+		{
+			Project project = new Project(_title,_description, _begin, _end);
+			projects.Add(project);
+		}
+
 		public void RemoveProject(int index)
 		{
 			projects.RemoveAt(index);
@@ -50,7 +59,7 @@ namespace Shared
 
 		// Gets and Sets
 
-		List<Project> Projects
+		public List<Project> Projects
 		{
 			get
 			{
@@ -58,7 +67,7 @@ namespace Shared
 			}
 		}
 
-		Dictionary<string, Professional> Users
+		public Dictionary<string, Professional> Users
 		{
 			get
 			{
@@ -66,7 +75,7 @@ namespace Shared
 			}
 		}
 
-		string ConnectedUser
+		public string ConnectedUser
 		{
 			get
 			{
