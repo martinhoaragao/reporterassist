@@ -10,33 +10,34 @@ using System.Collections.Generic;
 namespace RecordAudio {
 
 	public class MapsFragment : Fragment, IOnMapReadyCallback, ILocationListener {
-		MapFragment mapFragment;
-		GoogleMap map;
-		LocationManager locationManager;
-		string locationProvider;
-		bool viewCreated;
+		MapFragment 			mapFragment;
+		GoogleMap 				map;
+		LocationManager 	locationManager;
+		string 						locationProvider;
+		bool 							viewCreated;
 		
 		public override void OnCreate(Bundle savedInstanceState) {
 			base.OnCreate(savedInstanceState);
-
-			viewCreated = false;
 
 			InitializeLocationManager();
 		}
 
 		public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-			if (!viewCreated) {
-				View view = inflater.Inflate(Resource.Layout.MapsFragment, null);
-
-				this.mapFragment 	= (MapFragment) FragmentManager.FindFragmentById(Resource.Id.mapContainer);
-				this.map 					= mapFragment.Map;
-				this.viewCreated 	= true;
-				this.mapFragment.GetMapAsync(this);
-			
-				return view;
-			} else {
-				return View.FindViewById(Resource.Layout.MapsFragment);
+			var mf = (MapFragment)FragmentManager.FindFragmentById(Resource.Id.mapContainer);
+			if (mf != null) {
+				FragmentManager.BeginTransaction().Remove(mf).Commit();
+				FragmentManager.PopBackStack();
 			}
+			View view = inflater.Inflate(Resource.Layout.MapsFragment, null);
+
+			this.mapFragment 	= (MapFragment)FragmentManager.FindFragmentById(Resource.Id.mapContainer);
+			this.map 					= mapFragment.Map;
+			this.viewCreated 	= true;
+			this.mapFragment.GetMapAsync(this);
+			Button markLocationButton = view.FindViewById<Button>(Resource.Id.markLocationButton);
+			markLocationButton.Click += MarkLocationButtonClicked;
+
+			return view;
 		}
 		
 		public void OnMapReady(GoogleMap map) {
@@ -57,24 +58,24 @@ namespace RecordAudio {
 	
 		public override void OnResume() {
 			base.OnResume();
-			locationManager.RequestLocationUpdates(locationProvider, 0, 0, (ILocationListener) this);
-			System.Diagnostics.Debug.WriteLine("OLÁ");
 		}
 		
 		public override void OnPause() {
 			base.OnPause();
-			locationManager.RemoveUpdates((ILocationListener) this);
-			System.Diagnostics.Debug.WriteLine("ADEUS");
+			locationManager.RemoveUpdates(this);
 		}
 		
 		public void OnLocationChanged(Location location) {
 			// Add marker of the current location to the map.
 			var marker 		= new MarkerOptions();
-			var position 	= new LatLng(10, 10);
+			var position 	= new LatLng(location.Latitude, location.Longitude);
 			var title 		= "Localização Atual";
 			marker.SetPosition(position);
 			marker.SetTitle(title);
 			map.AddMarker(marker);
+
+			CameraUpdate cameraUpdate = CameraUpdateFactory.NewLatLngZoom(position, 10);
+			map.AnimateCamera(cameraUpdate);
 			
 			System.Diagnostics.Debug.WriteLine("LAT: " + location.Latitude + " | LONG: " + location.Longitude);
 		}
@@ -84,6 +85,12 @@ namespace RecordAudio {
 		public void OnProviderEnabled(string provider) {}
 		
 		public void OnStatusChanged(string provider, Availability status, Bundle extras) {}
+		
+		private void MarkLocationButtonClicked(object sender, System.EventArgs args) {
+			// Request location update.
+			locationManager.RequestLocationUpdates(LocationManager.GpsProvider, 0, 0, (ILocationListener) this);
+			locationManager.RequestLocationUpdates(LocationManager.NetworkProvider, 0, 0, (ILocationListener) this);
+		}
 	}	
 }
 
