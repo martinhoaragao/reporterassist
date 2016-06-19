@@ -3,21 +3,21 @@ using System.Collections.Generic;
 
 namespace Shared {
 	public class Audio : Attachment {
-		private List<DateTime> timestamps;
+		private List<float> timestamps;
 
 		public Audio (string name, string path) : base(name, path) 
 		{
-			timestamps = new List<DateTime>();
+			timestamps = new List<float>();
 		}
 
-		public void MarkTimestamp(DateTime timestamp) 
+		public void MarkTimestamp(float timestamp) 
 		{
 			timestamps.Add(timestamp);
 		}
 
-		// Gets and Sets
+        // Gets and Sets
 
-		public List<DateTime> Timestamps
+        public List<float> Timestamps
 		{
 			get
 			{

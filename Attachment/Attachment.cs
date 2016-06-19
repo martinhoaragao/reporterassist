@@ -10,9 +10,9 @@ namespace Shared {
 			path = _path;
 		}
 
-		// Gets and Sets
+        // Gets and Sets
 
-		public string Name
+        public string Name
 		{
 			get
 			{

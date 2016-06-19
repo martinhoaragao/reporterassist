@@ -1,18 +1,15 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 namespace Shared
 {
 	public class ReporterAssist
 	{
-		private List<Project> projects;
 		private Dictionary<string, Professional> users;
 		private string connectedUser;
 
 		public ReporterAssist()
 		{
-			projects = new List<Project>();
 			users = new Dictionary<string, Professional>();
-			connectedUser = null;
 		}
 
 		public bool LogIn(string mail, string password)
@@ -25,7 +22,7 @@ namespace Shared
 
 				ifLogsIn = professional.Password == password;
 				if (ifLogsIn)
-					connectedUser = professional.Name;
+				connectedUser = professional.Name;
 			}
 			return ifLogsIn;
 		}
@@ -34,46 +31,52 @@ namespace Shared
 		{
 		}
 
-		public void AddProject(string title, DateTime begin)
+		public void AddProject(int id, string title, string note, DateTime begin, DateTime end, string type, string mail)
 		{
-			Project project = new Project(title, begin);
-			projects.Add(project);
+			State state = new State(type);
+			users[mail].AddProject(id, title, note, begin, end, state);
 		}
 
-		public void AddProject(Project proj)
-		{
-			Project project = new Project(proj.Title, proj.Description, proj.Begin, proj.End, proj.Tasks, proj.Attachments, proj.Coordinates);
-			projects.Add(project);
-		}
-
-		public void AddProject(string _title, string _description, DateTime _begin, DateTime _end)
-		{
-			Project project = new Project(_title,_description, _begin, _end);
-			projects.Add(project);
-		}
-
-		public void RemoveProject(int index)
-		{
-			projects.RemoveAt(index);
-		}
-
-		public void AddUser(string mail, string password, string name)
+		public void AddUser(int id, string mail, string password, string name)
 		{
 			Professional professional = new Professional(mail, password, name);
 			users.Add(mail, professional);
 		}
 
-		// Gets and Sets
-
-		public List<Project> Projects
+		public void AddTask(int id, int idProject, string title, string note, string type, string mail)
 		{
-			get
-			{
-				return projects;
-			}
+			State state = new State(type);
+			users[mail].AddTask(id, idProject, title, note, state);
 		}
 
-		public Dictionary<string, Professional> Users
+		public void AddAudio(int id, string path, int idProject, string mail)
+		{
+			users[mail].AddAudio(id, path, idProject);
+		}
+
+		public void AddImage(int id, string path, int idProject, string mail)
+		{
+			users[mail].AddImage(id, path, idProject);
+		}
+
+		public void AddVideo(int id, string path, int idProject, string mail)
+		{
+			users[mail].AddVideo(id, path, idProject);
+		}
+
+		public void AddTimeStamp(float timestamp, int idAudio, int idProject, string mail)
+		{
+			users[mail].AddTimeStamp(timestamp, idAudio, idProject);
+		}
+
+		public void AddCoordinate(int idProject, float lat, float lon, DateTime date, string mail)
+		{
+			users[mail].AddCoordinate(idProject, lat, lon, date);
+		}
+
+		// Gets and Sets
+
+		Dictionary<string, Professional> Users
 		{
 			get
 			{
@@ -81,7 +84,7 @@ namespace Shared
 			}
 		}
 
-		public string ConnectedUser
+		string ConnectedUser
 		{
 			get
 			{
@@ -90,4 +93,3 @@ namespace Shared
 		}
 	}
 }
-

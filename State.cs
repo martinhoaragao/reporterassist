@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 namespace Shared
 {
 	public class State
@@ -8,6 +8,11 @@ namespace Shared
 		public State()
 		{
 			type = "To Do";
+		}
+
+		public State(string _type)
+		{
+			type = _type;
 		}
 
 		// Gets and Sets
@@ -25,8 +30,4 @@ namespace Shared
 			}
 		}
 	}
-
-
-
 }
-
