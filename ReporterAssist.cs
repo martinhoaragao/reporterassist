@@ -40,6 +40,12 @@ namespace Shared
 			projects.Add(project);
 		}
 
+		public void AddProject(Project proj)
+		{
+			Project project = new Project(proj.Title, proj.Description, proj.Begin, proj.End, proj.Tasks, proj.Attachments, proj.Coordinates);
+			projects.Add(project);
+		}
+
 		public void AddProject(string _title, string _description, DateTime _begin, DateTime _end)
 		{
 			Project project = new Project(_title,_description, _begin, _end);
