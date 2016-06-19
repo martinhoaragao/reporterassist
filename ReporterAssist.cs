@@ -52,6 +52,12 @@ namespace Shared
 			projects.Add(project);
 		}
 
+		public void AddProject(string _title, string _description, DateTime _begin, DateTime _end, State _state)
+		{
+			Project project = new Project(_title, _description, _begin, _end, _state);
+			projects.Add(project);
+		}
+
 		public void RemoveProject(int index)
 		{
 			projects.RemoveAt(index);

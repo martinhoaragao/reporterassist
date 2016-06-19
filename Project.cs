@@ -55,6 +55,21 @@ namespace Shared
 
 		}
 
+		public Project(string _title, string _description, DateTime _begin, DateTime _end, State _state)
+		{
+			title = _title;
+			begin = _begin;
+			description = _description;
+			end = _end;
+			state = new State();
+			state.Type = _state.Type;
+
+			tasks = new List<Task>();
+			attachments = new List<Attachment>();
+			coordinates = new List<Coordinate>();
+
+		}
+
 		public Project(string _title, string _description, DateTime _begin, DateTime _end, List<Task> _tasks, List<Attachment> _attach, List<Coordinate> _coord)
 		{
 			title = _title;
@@ -75,9 +90,9 @@ namespace Shared
 			tasks.Add(task);
 		}
 
-		public void AddTask(int id, string title, string descricao)
+		public void AddTask(int id, string title, string descricao, State state)
 		{
-			Task task = new Task(id, title, descricao);
+			Task task = new Task(id, title, descricao, state);
 			tasks.Add(task);
 		}
 

@@ -680,11 +680,11 @@
                                 <tabViewItems>
                                     <tabViewItem label="Login" identifier="1" id="2Ug-s6-YHG">
                                         <view key="view" id="AP2-lf-8Hf">
-                                            <rect key="frame" x="10" y="33" width="541" height="308"/>
+                                            <rect key="frame" x="10" y="33" width="131" height="0.0"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FN4-QD-omV">
-                                                    <rect key="frame" x="23" y="250" width="66" height="17"/>
+                                                    <rect key="frame" x="23" y="-58" width="66" height="17"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Username" id="COU-fE-hBn">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -692,7 +692,7 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dOJ-F9-cAi">
-                                                    <rect key="frame" x="23" y="147" width="63" height="17"/>
+                                                    <rect key="frame" x="23" y="-161" width="63" height="17"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Password" id="36d-pA-dHE">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -700,7 +700,7 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <secureTextField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vP8-n6-h6I">
-                                                    <rect key="frame" x="211" y="144" width="245" height="22"/>
+                                                    <rect key="frame" x="211" y="-164" width="245" height="22"/>
                                                     <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="G27-oi-qbg">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -711,7 +711,7 @@
                                                     </secureTextFieldCell>
                                                 </secureTextField>
                                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JIe-dO-VXg">
-                                                    <rect key="frame" x="229" y="10" width="83" height="32"/>
+                                                    <rect key="frame" x="229" y="-298" width="83" height="32"/>
                                                     <buttonCell key="cell" type="push" title="Login" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Yg9-0w-c0n">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="system"/>
@@ -721,7 +721,7 @@
                                                     </connections>
                                                 </button>
                                                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="82n-Cm-f2K">
-                                                    <rect key="frame" x="211" y="247" width="245" height="22"/>
+                                                    <rect key="frame" x="211" y="-61" width="245" height="22"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="XUC-13-cGe">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -729,7 +729,7 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wqE-Og-U74">
-                                                    <rect key="frame" x="23" y="46" width="503" height="17"/>
+                                                    <rect key="frame" x="23" y="-262" width="503" height="17"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="Xz0-9B-XPw">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -737,7 +737,7 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8oL-zI-qi0">
-                                                    <rect key="frame" x="229" y="10" width="83" height="32"/>
+                                                    <rect key="frame" x="229" y="-298" width="83" height="32"/>
                                                     <buttonCell key="cell" type="push" title="Logout" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BIR-em-zsf">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="system"/>
@@ -760,11 +760,11 @@
                                                     <tabViewItems>
                                                         <tabViewItem label="Trabalhos" identifier="1" id="ZCR-T8-G71">
                                                             <view key="view" id="5hW-AS-Bve">
-                                                                <rect key="frame" x="10" y="33" width="540" height="283"/>
+                                                                <rect key="frame" x="10" y="33" width="319" height="0.0"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <subviews>
                                                                     <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dMb-gB-aLL">
-                                                                        <rect key="frame" x="102" y="167" width="335" height="26"/>
+                                                                        <rect key="frame" x="102" y="-116" width="335" height="26"/>
                                                                         <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="27Z-H4-Agn" id="Zva-5d-A3L">
                                                                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                                             <font key="font" metaFont="menu"/>
@@ -778,7 +778,7 @@
                                                                         </popUpButtonCell>
                                                                     </popUpButton>
                                                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8cY-Hv-rPu">
-                                                                        <rect key="frame" x="193" y="82" width="155" height="32"/>
+                                                                        <rect key="frame" x="193" y="-201" width="155" height="32"/>
                                                                         <buttonCell key="cell" type="push" title="Visualizar Trabalho" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZsM-8G-dKK">
                                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                             <font key="font" metaFont="system"/>
@@ -899,7 +899,7 @@
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <subviews>
                                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a48-CE-rDj">
-                                                                        <rect key="frame" x="45" y="227" width="56" height="17"/>
+                                                                        <rect key="frame" x="45" y="256" width="56" height="17"/>
                                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Titulo " id="AY8-6Q-yhU">
                                                                             <font key="font" metaFont="system"/>
                                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -907,7 +907,7 @@
                                                                         </textFieldCell>
                                                                     </textField>
                                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w95-CR-BDy">
-                                                                        <rect key="frame" x="45" y="185" width="65" height="17"/>
+                                                                        <rect key="frame" x="45" y="224" width="65" height="17"/>
                                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Descrição" id="dgQ-IV-Uzz">
                                                                             <font key="font" metaFont="system"/>
                                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -915,7 +915,7 @@
                                                                         </textFieldCell>
                                                                     </textField>
                                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H4w-n1-Rpl">
-                                                                        <rect key="frame" x="45" y="140" width="87" height="17"/>
+                                                                        <rect key="frame" x="45" y="189" width="87" height="17"/>
                                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Data de Início" id="52C-kV-Y8f">
                                                                             <font key="font" metaFont="system"/>
                                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -923,7 +923,7 @@
                                                                         </textFieldCell>
                                                                     </textField>
                                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bTX-KZ-gee">
-                                                                        <rect key="frame" x="45" y="96" width="77" height="17"/>
+                                                                        <rect key="frame" x="45" y="150" width="77" height="17"/>
                                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Data de Fim" id="kf4-cb-dmi">
                                                                             <font key="font" metaFont="system"/>
                                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -931,7 +931,7 @@
                                                                         </textFieldCell>
                                                                     </textField>
                                                                     <datePicker verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ORs-gb-Rji">
-                                                                        <rect key="frame" x="270" y="93" width="99" height="27"/>
+                                                                        <rect key="frame" x="270" y="144" width="99" height="27"/>
                                                                         <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="wLu-Xe-YhP">
                                                                             <font key="font" metaFont="system"/>
                                                                             <calendarDate key="date" timeIntervalSinceReferenceDate="-595929600" calendarFormat="%Y-%m-%d %H:%M:%S %z">
@@ -943,7 +943,7 @@
                                                                         </datePickerCell>
                                                                     </datePicker>
                                                                     <datePicker verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wgg-lE-SGo">
-                                                                        <rect key="frame" x="270" y="137" width="99" height="27"/>
+                                                                        <rect key="frame" x="270" y="186" width="99" height="27"/>
                                                                         <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="noT-wd-jCh">
                                                                             <font key="font" metaFont="system"/>
                                                                             <calendarDate key="date" timeIntervalSinceReferenceDate="-595929600" calendarFormat="%Y-%m-%d %H:%M:%S %z">
@@ -955,7 +955,7 @@
                                                                         </datePickerCell>
                                                                     </datePicker>
                                                                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RZy-ix-bin">
-                                                                        <rect key="frame" x="270" y="224" width="252" height="22"/>
+                                                                        <rect key="frame" x="270" y="253" width="252" height="22"/>
                                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Ol6-EV-MgD">
                                                                             <font key="font" metaFont="system"/>
                                                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -963,7 +963,7 @@
                                                                         </textFieldCell>
                                                                     </textField>
                                                                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nkw-Qv-Ma0">
-                                                                        <rect key="frame" x="270" y="182" width="252" height="22"/>
+                                                                        <rect key="frame" x="270" y="221" width="252" height="22"/>
                                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Y7t-fL-S3D">
                                                                             <font key="font" metaFont="system"/>
                                                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -991,7 +991,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Syx-Xh-5Rn">
-                                                                        <rect key="frame" x="268" y="96" width="155" height="17"/>
+                                                                        <rect key="frame" x="268" y="150" width="155" height="17"/>
                                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Data de Fim não definida" id="VoK-MY-ILi">
                                                                             <font key="font" metaFont="system"/>
                                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1017,8 +1017,31 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GRO-eo-fZe">
-                                                                        <rect key="frame" x="427" y="94" width="61" height="18"/>
+                                                                        <rect key="frame" x="427" y="149" width="61" height="18"/>
                                                                         <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="MTw-rM-9f8">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FDe-U5-3RG">
+                                                                        <rect key="frame" x="45" y="113" width="46" height="17"/>
+                                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Estado" id="Rkt-07-Cnn">
+                                                                            <font key="font" metaFont="system"/>
+                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                        </textFieldCell>
+                                                                    </textField>
+                                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Blb-T2-j2K">
+                                                                        <rect key="frame" x="268" y="113" width="69" height="17"/>
+                                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="qkU-wu-PBG">
+                                                                            <font key="font" metaFont="system"/>
+                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                        </textFieldCell>
+                                                                    </textField>
+                                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k0l-CG-1Yy">
+                                                                        <rect key="frame" x="341" y="112" width="129" height="18"/>
+                                                                        <buttonCell key="cell" type="check" title="Concluir Trabalho" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="T0s-Jc-qVj">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
                                                                         </buttonCell>
@@ -1060,12 +1083,15 @@
                                                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                                                 <font key="font" metaFont="system"/>
                                                                                             </buttonCell>
+                                                                                            <connections>
+                                                                                                <action selector="VisualizarTarefasAction:" target="XfG-lQ-9wD" id="RtR-s6-BPy"/>
+                                                                                            </connections>
                                                                                         </button>
                                                                                     </subviews>
                                                                                 </view>
                                                                             </tabViewItem>
                                                                             <tabViewItem label="Adicionar Tarefas" identifier="2" id="LSH-Yh-lti">
-                                                                                <view key="view" ambiguous="YES" id="dRG-N3-yyn">
+                                                                                <view key="view" id="dRG-N3-yyn">
                                                                                     <rect key="frame" x="10" y="33" width="531" height="255"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
@@ -1111,24 +1137,136 @@
                                                                                                 <action selector="AdicionarTarefa:" target="XfG-lQ-9wD" id="DUH-DB-Q2h"/>
                                                                                             </connections>
                                                                                         </button>
+                                                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UfS-fB-JvS">
+                                                                                            <rect key="frame" x="163" y="46" width="204" height="17"/>
+                                                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="Nhi-cx-wxQ">
+                                                                                                <font key="font" metaFont="system"/>
+                                                                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                                            </textFieldCell>
+                                                                                        </textField>
                                                                                     </subviews>
                                                                                 </view>
                                                                             </tabViewItem>
                                                                             <tabViewItem label="Visualizar Tarefa" identifier="" id="TPe-wC-BqZ">
-                                                                                <view key="view" id="qty-Fr-GhN">
+                                                                                <view key="view" ambiguous="YES" id="qty-Fr-GhN">
                                                                                     <rect key="frame" x="10" y="33" width="531" height="255"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                                </view>
-                                                                            </tabViewItem>
-                                                                            <tabViewItem label="Anexos" identifier="" id="uvY-sA-1Xv">
-                                                                                <view key="view" id="ZWj-Qt-ndb">
-                                                                                    <rect key="frame" x="10" y="33" width="531" height="255"/>
-                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                                    <subviews>
+                                                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SU8-D0-wUe">
+                                                                                            <rect key="frame" x="36" y="207" width="39" height="17"/>
+                                                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Titulo" id="TuX-r6-4lG">
+                                                                                                <font key="font" metaFont="system"/>
+                                                                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                                            </textFieldCell>
+                                                                                            <connections>
+                                                                                                <action selector="VisualizarTituloTarefaLabel:" target="XfG-lQ-9wD" id="Cht-dG-ckG"/>
+                                                                                            </connections>
+                                                                                        </textField>
+                                                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x80-31-d0b">
+                                                                                            <rect key="frame" x="36" y="153" width="65" height="17"/>
+                                                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Descrição" id="0hr-je-Ntj">
+                                                                                                <font key="font" metaFont="system"/>
+                                                                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                                            </textFieldCell>
+                                                                                            <connections>
+                                                                                                <action selector="VisualizarDescricaoTarefaLabel:" target="XfG-lQ-9wD" id="MEJ-8Q-EZb"/>
+                                                                                            </connections>
+                                                                                        </textField>
+                                                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pd0-mK-DZk">
+                                                                                            <rect key="frame" x="36" y="100" width="46" height="17"/>
+                                                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Estado" id="YjL-sC-VpM">
+                                                                                                <font key="font" metaFont="system"/>
+                                                                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                                            </textFieldCell>
+                                                                                            <connections>
+                                                                                                <action selector="VisualizarEstadoTarefaLabel:" target="XfG-lQ-9wD" id="tmy-iZ-HfS"/>
+                                                                                            </connections>
+                                                                                        </textField>
+                                                                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oyG-yO-p2p">
+                                                                                            <rect key="frame" x="233" y="150" width="266" height="22"/>
+                                                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="bDe-Zb-DnM">
+                                                                                                <font key="font" metaFont="system"/>
+                                                                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                                            </textFieldCell>
+                                                                                        </textField>
+                                                                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BH1-p0-bVJ">
+                                                                                            <rect key="frame" x="233" y="204" width="266" height="22"/>
+                                                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="QkO-z2-d7B">
+                                                                                                <font key="font" metaFont="system"/>
+                                                                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                                            </textFieldCell>
+                                                                                        </textField>
+                                                                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UfU-Si-yLV">
+                                                                                            <rect key="frame" x="11" y="10" width="252" height="32"/>
+                                                                                            <buttonCell key="cell" type="push" title="Editar" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="a0O-GC-k8E">
+                                                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                                                <font key="font" metaFont="system"/>
+                                                                                            </buttonCell>
+                                                                                            <connections>
+                                                                                                <action selector="EditarTarefaAction:" target="XfG-lQ-9wD" id="bwo-g4-EGM"/>
+                                                                                            </connections>
+                                                                                        </button>
+                                                                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tdB-hj-EI1">
+                                                                                            <rect key="frame" x="268" y="10" width="252" height="32"/>
+                                                                                            <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AgM-lW-Z7b">
+                                                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                                                <font key="font" metaFont="system"/>
+                                                                                            </buttonCell>
+                                                                                            <connections>
+                                                                                                <action selector="RemoverTarefaAction:" target="XfG-lQ-9wD" id="zOs-gw-oSF"/>
+                                                                                            </connections>
+                                                                                        </button>
+                                                                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SKL-zI-c49">
+                                                                                            <rect key="frame" x="367" y="98" width="108" height="18"/>
+                                                                                            <buttonCell key="cell" type="check" title="Concluido" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="5au-n3-0Vl">
+                                                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                                                <font key="font" metaFont="system"/>
+                                                                                            </buttonCell>
+                                                                                        </button>
+                                                                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yea-7c-8Gg">
+                                                                                            <rect key="frame" x="227" y="43" width="81" height="32"/>
+                                                                                            <buttonCell key="cell" type="push" title="Gravar" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="atx-iE-deZ">
+                                                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                                                <font key="font" metaFont="system"/>
+                                                                                            </buttonCell>
+                                                                                            <connections>
+                                                                                                <action selector="GravarTarefaAction:" target="XfG-lQ-9wD" id="1n1-Th-oYJ"/>
+                                                                                            </connections>
+                                                                                        </button>
+                                                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Lv-IZ-vSr">
+                                                                                            <rect key="frame" x="231" y="100" width="187" height="17"/>
+                                                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="nao concluido" id="V2g-eh-Fgz">
+                                                                                                <font key="font" metaFont="system"/>
+                                                                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                                            </textFieldCell>
+                                                                                        </textField>
+                                                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y1Y-aM-Qsr">
+                                                                                            <rect key="frame" x="193" y="75" width="248" height="17"/>
+                                                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="7pS-Ed-a8z">
+                                                                                                <font key="font" metaFont="system"/>
+                                                                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                                            </textFieldCell>
+                                                                                        </textField>
+                                                                                    </subviews>
                                                                                 </view>
                                                                             </tabViewItem>
                                                                         </tabViewItems>
                                                                     </tabView>
                                                                 </subviews>
+                                                            </view>
+                                                        </tabViewItem>
+                                                        <tabViewItem label="Anexos" identifier="" id="4On-XI-orv">
+                                                            <view key="view" id="8Fk-GI-4sq">
+                                                                <rect key="frame" x="10" y="33" width="540" height="283"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             </view>
                                                         </tabViewItem>
                                                     </tabViewItems>
@@ -1141,9 +1279,12 @@
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="AddTarefaLabel" destination="UfS-fB-JvS" id="f02-O9-MxK"/>
                         <outlet property="AdicionarTrabalhoLabel" destination="lwI-nL-4tV" id="fES-1S-t0S"/>
                         <outlet property="CheckEditarDataFimButton" destination="GRO-eo-fZe" id="zc5-p3-gqC"/>
                         <outlet property="CheckFim" destination="bJn-fW-A6i" id="u6C-Xm-uT9"/>
+                        <outlet property="ConcluidoTarefaLabel" destination="0Lv-IZ-vSr" id="4uj-Yf-FT3"/>
+                        <outlet property="ConcluirTarefaButton" destination="SKL-zI-c49" id="bFX-3x-vYh"/>
                         <outlet property="DataFimLabel" destination="Syx-Xh-5Rn" id="DvA-nt-nyt"/>
                         <outlet property="DataFimNameLabel" destination="bTX-KZ-gee" id="n6D-6y-l9e"/>
                         <outlet property="DataFimTrabalho" destination="ORs-gb-Rji" id="jkE-A1-hB4"/>
@@ -1152,7 +1293,10 @@
                         <outlet property="DescricaoLabel" destination="w95-CR-BDy" id="wbK-5j-WdF"/>
                         <outlet property="DescricaoTrabalho" destination="Nkw-Qv-Ma0" id="iKQ-Ny-iGE"/>
                         <outlet property="EdicaoRemocaoTrabalhoLabel" destination="6nR-SP-3It" id="byQ-jd-fOp"/>
+                        <outlet property="EditarRemoverTarefaLabel" destination="y1Y-aM-Qsr" id="1XU-xm-eL5"/>
+                        <outlet property="EditarTarefaButton" destination="UfU-Si-yLV" id="AL0-WK-cj5"/>
                         <outlet property="EditarTrabalhoButton" destination="Y65-Qs-GpP" id="7Pq-U3-oNz"/>
+                        <outlet property="GravarTarefaButton" destination="Yea-7c-8Gg" id="Rtn-BL-0wv"/>
                         <outlet property="GuardarEdicaoTrabalho" destination="wjK-0B-6wh" id="8Yp-Hb-lP9"/>
                         <outlet property="LoginAction" destination="JIe-dO-VXg" id="3FF-Ge-e0j"/>
                         <outlet property="LoginButton" destination="JIe-dO-VXg" id="oAy-ya-lnE"/>
@@ -1160,11 +1304,15 @@
                         <outlet property="LogoutButton" destination="8oL-zI-qi0" id="XOm-A7-2DH"/>
                         <outlet property="NovaTarefaDescricao" destination="Z4G-ap-PWq" id="Ggx-Nm-DeI"/>
                         <outlet property="NovaTarefaTitulo" destination="DfS-p1-vGw" id="YgM-T0-eo5"/>
+                        <outlet property="NovoTrabalhoConluirButton" destination="k0l-CG-1Yy" id="J1A-vE-fTv"/>
                         <outlet property="NovoTrabalhoDescricao" destination="Kap-gu-atf" id="seA-S9-Q7P"/>
                         <outlet property="NovoTrabalhoFim" destination="npG-9Z-wFJ" id="XEf-0t-pGr"/>
                         <outlet property="NovoTrabalhoInicio" destination="gS2-uS-4uI" id="CzR-IE-4j6"/>
+                        <outlet property="NovoTrabalhoLabelState" destination="Blb-T2-j2K" id="F91-LD-Ei7"/>
+                        <outlet property="NovoTrabalhoStateLabel" destination="FDe-U5-3RG" id="qcV-Wf-N36"/>
                         <outlet property="NovoTrabalhoTitulo" destination="ZN6-Au-sg4" id="xas-rN-0O5"/>
                         <outlet property="PasswordText" destination="vP8-n6-h6I" id="NQO-kC-tjc"/>
+                        <outlet property="RemoverTarefaButton" destination="tdB-hj-EI1" id="iuH-Px-rrs"/>
                         <outlet property="RemoverTrabalho" destination="Hcx-Wv-Au8" id="aft-94-ret"/>
                         <outlet property="RemoverTrabalhoButton" destination="Hcx-Wv-Au8" id="MkR-rR-JCl"/>
                         <outlet property="TarefasPop" destination="y6U-1Y-U8T" id="CrC-EX-MTk"/>
@@ -1174,8 +1322,13 @@
                         <outlet property="TrabalhosPop" destination="Zva-5d-A3L" id="FOm-3e-ngN"/>
                         <outlet property="TrabalhosView" destination="cq9-cw-TzA" id="aUU-uy-usA"/>
                         <outlet property="UsernameText" destination="82n-Cm-f2K" id="MD9-Bj-o4d"/>
+                        <outlet property="VisualizarDescricaoTarefaLabel" destination="x80-31-d0b" id="gqX-DR-5BF"/>
+                        <outlet property="VisualizarDescricaoTarefaText" destination="oyG-yO-p2p" id="bnj-Mr-A5O"/>
+                        <outlet property="VisualizarEstadoTarefaLabel" destination="Pd0-mK-DZk" id="zWc-B0-BfL"/>
                         <outlet property="VisualizarTarefasAction" destination="MXd-xt-Xsv" id="jjd-Fg-ip3"/>
                         <outlet property="VisualizarTarefasButton" destination="MXd-xt-Xsv" id="Dim-DI-kbq"/>
+                        <outlet property="VisualizarTituloTarefaLabel" destination="SU8-D0-wUe" id="H8V-XX-6Am"/>
+                        <outlet property="VisualizarTituloTarefaText" destination="BH1-p0-bVJ" id="CvZ-PU-rDu"/>
                     </connections>
                 </viewController>
             </objects>

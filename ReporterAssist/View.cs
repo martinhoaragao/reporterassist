@@ -50,6 +50,28 @@ namespace Mac
 			EdicaoRemocaoTrabalhoLabel.Hidden = true;
 			GuardarEdicaoTrabalho.Hidden = true;
 			CheckEditarDataFimButton.Hidden = true;
+			NovoTrabalhoLabelState.Hidden = true;
+			NovoTrabalhoStateLabel.Hidden = true;
+			NovoTrabalhoConluirButton.Hidden = true;
+
+			//Adiciona Tarefa
+
+			AddTarefaLabel.Hidden = true;
+
+			//Visualizar Tarefa
+			VisualizarTituloTarefaLabel.Hidden = true;
+			VisualizarEstadoTarefaLabel.Hidden = true;
+			VisualizarDescricaoTarefaLabel.Hidden = true;
+			VisualizarTituloTarefaText.Hidden = true;
+			VisualizarDescricaoTarefaText.Hidden = true;
+			ConcluidoTarefaLabel.Hidden = true;
+			ConcluirTarefaButton.Hidden = true;
+			EditarTarefaButton.Hidden = true;
+			RemoverTarefaButton.Hidden = true;
+			GravarTarefaButton.Hidden = true;
+			EditarRemoverTarefaLabel.Hidden = true;
+
+
 		}
 
 		//NSDATE to DateTime converter
@@ -155,6 +177,7 @@ namespace Mac
 						teste = true;
 						AdicionarTrabalhoLabel.StringValue = "Título do Trabalho já usado";
 						AdicionarTrabalhoLabel.Hidden = false;
+						break;
 					}
 				}
 				if (teste == false)
@@ -169,7 +192,16 @@ namespace Mac
 					else {
 						fim = new DateTime();
 					}
-					reporter.AddProject(titulo, descricao, inicio, fim);
+					int result = DateTime.Compare(DateTime.Now, inicio);
+					State state = new State();
+					if (result < 0)
+					{
+						state.Type = "por fazer";
+					}
+					else state.Type = "a fazer";
+
+
+					reporter.AddProject(titulo, descricao, inicio, fim, state);
 					updateTrabalhosPopUp();
 					AdicionarTrabalhoLabel.StringValue = "Trabalho Adicionado com sucesso";
 					AdicionarTrabalhoLabel.Hidden = false;
@@ -184,12 +216,14 @@ namespace Mac
 
 		partial void VerTarefasAction(NSObject sender)
 		{
+			NovoTrabalhoConluirButton.Hidden = true;
 			updateTarefasPop();
 			DataFimTrabalho.Hidden = true;
 			DataFimLabel.Hidden = true;
 			EdicaoRemocaoTrabalhoLabel.Hidden = true;
 			GuardarEdicaoTrabalho.Hidden = true;
 			CheckEditarDataFimButton.Hidden = true;
+			AddTarefaLabel.Hidden = true;
 
 			TarefasView.Hidden = false;
 
@@ -204,6 +238,7 @@ namespace Mac
 					TituloTrabalho.StringValue = proj.Title;
 					DescricaoTrabalho.StringValue = proj.Description;
 					DataInicioTrabalho.DateValue = DateTimeToNSDate(proj.Begin);
+					NovoTrabalhoLabelState.StringValue = proj.State.Type;
 					if (proj.End.Equals(aux))
 					{
 						DataFimLabel.Hidden = false;
@@ -225,11 +260,15 @@ namespace Mac
 			TituloLabel.Hidden = false;
 			EditarTrabalhoButton.Hidden = false;
 			RemoverTrabalhoButton.Hidden = false;
-			DataInicioLabel.Hidden = false;
+			DataInicioLabel.Hidden = false;NovoTrabalhoLabelState.Hidden = false;
+			NovoTrabalhoStateLabel.Hidden = false;
 		}
 
 		partial void EditarTrabalho(NSObject sender)
 		{
+			NovoTrabalhoLabelState.Hidden = false;
+			NovoTrabalhoStateLabel.Hidden = false;
+			NovoTrabalhoConluirButton.Hidden = false;
 			DataFimLabel.Hidden = true;
 			DataFimTrabalho.Hidden = false;
 			GuardarEdicaoTrabalho.Hidden = false;
@@ -268,11 +307,34 @@ namespace Mac
 						else {
 							proj.End = new DateTime();
 						}
+						if (NovoTrabalhoConluirButton.State == NSCellStateValue.On)
+						{
+							State state = new State();
+							state.Type = "feito";
+							proj.State = state;
+						}
+						else 
+						{
+							int result = DateTime.Compare(DateTime.Now, proj.End);
+							State state = new State();
+							if (result < 0)
+							{
+								state.Type = "por fazer";
+								proj.State = state;
+
+							}
+							else
+							{
+								state.Type = "a fazer";
+								proj.State = state;
+							}
+						}
 
 						tituloUsado = TituloTrabalho.StringValue;
 						updateTrabalhosPopUp();
 						EdicaoRemocaoTrabalhoLabel.StringValue = "Trabalho editado com sucesso";
 						EdicaoRemocaoTrabalhoLabel.Hidden = false;
+						NovoTrabalhoConluirButton.Hidden = false;
 						break;
 					}
 				}
@@ -295,6 +357,9 @@ namespace Mac
 			DataInicioLabel.Hidden = true;
 			GuardarEdicaoTrabalho.Hidden = true;
 			CheckEditarDataFimButton.Hidden = true;
+			NovoTrabalhoLabelState.Hidden = true;
+			NovoTrabalhoStateLabel.Hidden = true;
+			NovoTrabalhoConluirButton.Hidden = true;
 
 			List<Project> projetos = reporter.Projects;
 			foreach (Project proj in projetos)
@@ -319,23 +384,172 @@ namespace Mac
 			Random rnd = new Random();
 			int id = rnd.Next(0, 10000);
 			int index = -1;
-			foreach (Project proj in projetos)
+			bool teste = false;
+
+			foreach (Project proj in reporter.Projects)
 			{
-				if (tituloUsado.Equals(proj.Title))
+				if (proj.Title.Equals(tituloUsado))
 				{
-					aux = proj;
-					index = projetos.IndexOf(proj);
-					reporter.RemoveProject(index);
+					foreach (Task task in proj.Tasks)
+					{
+						if (task.Title.Equals(NovaTarefaTitulo.StringValue))
+						{
+							AddTarefaLabel.StringValue = "Título de inválido";
+							teste = true;
+							break;
+						}
+					}
 					break;
 				}
 			}
-			aux.AddTask(id, NovaTarefaTitulo.StringValue, NovaTarefaDescricao.StringValue);
-			reporter.AddProject(aux);
+			if (!teste)
+			{
+				foreach (Project proj in projetos)
+				{
+					if (tituloUsado.Equals(proj.Title))
+					{
+						aux = proj;
+						index = projetos.IndexOf(proj);
+						reporter.RemoveProject(index);
+						break;
+					}
+				}
+				State state = new State();
+				state.Type = "nao concluido";
+				aux.AddTask(id, NovaTarefaTitulo.StringValue, NovaTarefaDescricao.StringValue, state);
+				reporter.AddProject(aux);
+				AddTarefaLabel.StringValue = "Tarefa adicionado com sucesso";
+				updateTarefasPop();
+			}
+			AddTarefaLabel.Hidden = false;
+		}
+
+		partial void VisualizarTarefasAction(NSObject sender)
+		{
+			GravarTarefaButton.Hidden = true;
+			EditarRemoverTarefaLabel.Hidden = true;
+			tarefaUsada = TarefasPop.TitleOfSelectedItem;
+
+			VisualizarTituloTarefaText.StringValue = tarefaUsada;
+			foreach (Project proj in reporter.Projects)
+			{
+				if (proj.Title.Equals(tituloUsado))
+				{
+					foreach (Task task in proj.Tasks)
+					{
+						if (task.Title.Equals(tarefaUsada))
+						{
+							VisualizarDescricaoTarefaText.StringValue = task.Description;
+							ConcluidoTarefaLabel.StringValue = task.State.Type;
+						}
+					}
+				}
+			}
+
+
+			VisualizarDescricaoTarefaLabel.Hidden = false;
+			VisualizarTituloTarefaLabel.Hidden = false;
+			VisualizarEstadoTarefaLabel.Hidden = false;
+			VisualizarTituloTarefaText.Hidden = false;
+			VisualizarDescricaoTarefaText.Hidden = false;
+			ConcluidoTarefaLabel.Hidden = false;
+			ConcluirTarefaButton.Hidden = true;
+			EditarTarefaButton.Hidden = false;
+			RemoverTarefaButton.Hidden = false;
+		}
+
+		partial void EditarTarefaAction(NSObject sender)
+		{
+			GravarTarefaButton.Hidden = false;
+			ConcluirTarefaButton.Hidden = false;
+		}
+
+		partial void GravarTarefaAction(NSObject sender)
+		{
+			bool teste = false;
+
+			foreach (Project proj in reporter.Projects)
+			{
+				if (proj.Title.Equals(tituloUsado))
+				{
+					foreach (Task task in proj.Tasks)
+					{
+						if (task.Title.Equals(VisualizarTituloTarefaText.StringValue) && !tarefaUsada.Equals(VisualizarTituloTarefaText.StringValue))
+						{
+							EditarRemoverTarefaLabel.StringValue = "Título de inválido";
+							teste = true;
+							break;
+						}
+					}
+					break;
+				}
+			}
+			if (!teste)
+			{
+				foreach (Project proj in reporter.Projects)
+				{
+					if (proj.Title.Equals(tituloUsado))
+					{
+						foreach (Task task in proj.Tasks)
+						{
+							if (task.Title.Equals(tarefaUsada))
+							{
+								task.Title = VisualizarTituloTarefaText.StringValue;
+								task.Description = VisualizarDescricaoTarefaText.StringValue;
+								if (ConcluirTarefaButton.State == NSCellStateValue.On)
+								{
+									State state = new State();
+									state.Type = "concluido";
+									task.State.Type = state.Type;
+								}
+								EditarRemoverTarefaLabel.StringValue = "Tarefa editada com sucesso";
+								break;
+							}
+						}
+						break;
+					}
+				}
+			}
+			else EditarRemoverTarefaLabel.StringValue = "Erro -> Titulo já usado";
+			EditarRemoverTarefaLabel.Hidden = false;
 			updateTarefasPop();
 		}
 
+		partial void RemoverTarefaAction(NSObject sender)
+		{
+			VisualizarTituloTarefaLabel.Hidden = true;
+			VisualizarEstadoTarefaLabel.Hidden = true;
+			VisualizarDescricaoTarefaLabel.Hidden = true;
+			VisualizarTituloTarefaText.Hidden = true;
+			VisualizarDescricaoTarefaText.Hidden = true;
+			ConcluidoTarefaLabel.Hidden = true;
+			ConcluirTarefaButton.Hidden = true;
+			EditarTarefaButton.Hidden = true;
+			RemoverTarefaButton.Hidden = true;
+			GravarTarefaButton.Hidden = true;
+			int index = -1;
+			EditarRemoverTarefaLabel.StringValue = "Tarefa inexistente";
+			foreach (Project proj in reporter.Projects)
+			{
+				if (proj.Title.Equals(tituloUsado))
+				{
+					foreach (Task task in proj.Tasks)
+					{
+						if (task.Title.Equals(VisualizarTituloTarefaText.StringValue))
+						{
+							index = proj.Tasks.IndexOf(task);
+							proj.RemoveTask(index);
+							updateTarefasPop();
+							EditarRemoverTarefaLabel.StringValue = "Tarefa removida com sucesso";
+							break;
+						}
+					}
+					break;
+				}
+			}
+			EditarRemoverTarefaLabel.Hidden = false;
 
-
+		}
 
 	}
 }

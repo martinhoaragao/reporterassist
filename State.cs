@@ -7,7 +7,7 @@ namespace Shared
 
 		public State()
 		{
-			type = "To Do";
+			type = "por fazer";
 		}
 
 		// Gets and Sets
