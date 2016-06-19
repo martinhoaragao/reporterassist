@@ -431,35 +431,41 @@ namespace RecordAudio
 			// aapt resource value: 0x7f09000d
 			public const int linearLayout = 2131296269;
 			
+			// aapt resource value: 0x7f090010
+			public const int mapContainer = 2131296272;
+			
+			// aapt resource value: 0x7f090011
+			public const int markLocationButton = 2131296273;
+			
 			// aapt resource value: 0x7f090001
 			public const int none = 2131296257;
 			
 			// aapt resource value: 0x7f090002
 			public const int normal = 2131296258;
 			
-			// aapt resource value: 0x7f090012
-			public const int place_autocomplete_clear_button = 2131296274;
-			
 			// aapt resource value: 0x7f090014
-			public const int place_autocomplete_powered_by_google = 2131296276;
+			public const int place_autocomplete_clear_button = 2131296276;
 			
 			// aapt resource value: 0x7f090016
-			public const int place_autocomplete_prediction_primary_text = 2131296278;
+			public const int place_autocomplete_powered_by_google = 2131296278;
+			
+			// aapt resource value: 0x7f090018
+			public const int place_autocomplete_prediction_primary_text = 2131296280;
+			
+			// aapt resource value: 0x7f090019
+			public const int place_autocomplete_prediction_secondary_text = 2131296281;
 			
 			// aapt resource value: 0x7f090017
-			public const int place_autocomplete_prediction_secondary_text = 2131296279;
+			public const int place_autocomplete_progress = 2131296279;
 			
-			// aapt resource value: 0x7f090015
-			public const int place_autocomplete_progress = 2131296277;
-			
-			// aapt resource value: 0x7f090010
-			public const int place_autocomplete_search_button = 2131296272;
-			
-			// aapt resource value: 0x7f090011
-			public const int place_autocomplete_search_input = 2131296273;
+			// aapt resource value: 0x7f090012
+			public const int place_autocomplete_search_button = 2131296274;
 			
 			// aapt resource value: 0x7f090013
-			public const int place_autocomplete_separator = 2131296275;
+			public const int place_autocomplete_search_input = 2131296275;
+			
+			// aapt resource value: 0x7f090015
+			public const int place_autocomplete_separator = 2131296277;
 			
 			// aapt resource value: 0x7f090003
 			public const int satellite = 2131296259;
@@ -467,26 +473,26 @@ namespace RecordAudio
 			// aapt resource value: 0x7f090006
 			public const int standard = 2131296262;
 			
-			// aapt resource value: 0x7f090018
-			public const int startButton = 2131296280;
+			// aapt resource value: 0x7f09001a
+			public const int startButton = 2131296282;
 			
-			// aapt resource value: 0x7f090019
-			public const int stopButton = 2131296281;
+			// aapt resource value: 0x7f09001b
+			public const int stopButton = 2131296283;
 			
 			// aapt resource value: 0x7f090004
 			public const int terrain = 2131296260;
 			
-			// aapt resource value: 0x7f09001b
-			public const int textView1 = 2131296283;
+			// aapt resource value: 0x7f09001d
+			public const int textView1 = 2131296285;
 			
-			// aapt resource value: 0x7f09001a
-			public const int timestampButton = 2131296282;
+			// aapt resource value: 0x7f09001c
+			public const int timestampButton = 2131296284;
 			
 			// aapt resource value: 0x7f09000f
 			public const int timestamps = 2131296271;
 			
-			// aapt resource value: 0x7f09001c
-			public const int timestampsListView = 2131296284;
+			// aapt resource value: 0x7f09001e
+			public const int timestampsListView = 2131296286;
 			
 			// aapt resource value: 0x7f090007
 			public const int wide = 2131296263;

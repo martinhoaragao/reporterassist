@@ -113,7 +113,7 @@ namespace RecordAudio {
       string[] aux_stamps = new string[stamps.Count];
       for (int i = 0; i < stamps.Count; i++)
         aux_stamps[i] = stamps[i].ToString();
-      IListAdapter adapter 				= new ArrayAdapter<string>(Context, 
+      	IListAdapter adapter 				= new ArrayAdapter<string>(Context, 
 				Android.Resource.Layout.SimpleListItem1, aux_stamps);
       timestampsListView.Adapter 	= adapter;
 

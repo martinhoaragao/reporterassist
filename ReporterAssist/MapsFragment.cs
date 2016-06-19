@@ -4,30 +4,44 @@ using Android.OS;
 using Android.Gms.Maps;
 using Android.Gms.Maps.Model;
 using Android.Locations;
+using Android.Widget;
 using System.Collections.Generic;
 
 namespace RecordAudio {
-	
-	public class MapsFragment : MapFragment, IOnMapReadyCallback, ILocationListener {
+
+	public class MapsFragment : Fragment, IOnMapReadyCallback, ILocationListener {
+		MapFragment mapFragment;
+		GoogleMap map;
 		LocationManager locationManager;
 		string locationProvider;
-		MarkerOptions marker;
-		GoogleMap map;
+		bool viewCreated;
 		
 		public override void OnCreate(Bundle savedInstanceState) {
 			base.OnCreate(savedInstanceState);
+
+			viewCreated = false;
+
+			InitializeLocationManager();
+		}
+
+		public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+			if (!viewCreated) {
+				View view = inflater.Inflate(Resource.Layout.MapsFragment, null);
+
+				this.mapFragment 	= (MapFragment) FragmentManager.FindFragmentById(Resource.Id.mapContainer);
+				this.map 					= mapFragment.Map;
+				this.viewCreated 	= true;
+				this.mapFragment.GetMapAsync(this);
+			
+				return view;
+			} else {
+				return View.FindViewById(Resource.Layout.MapsFragment);
+			}
 		}
 		
 		public void OnMapReady(GoogleMap map) {
-			this.map = map;
-		
-			// Create location manager.
-			InitializeLocationManager();
-			locationManager.RequestLocationUpdates(locationProvider, 0, 0, this);
-
-			System.Diagnostics.Debug.WriteLine("LOCATION MANAGER");
 		}
-		
+	
 		void InitializeLocationManager() {
 			locationManager = (LocationManager) Application.Context.GetSystemService(Android.Content.Context.LocationService);
 			Criteria criteriaForLocationService = new Criteria { Accuracy = Accuracy.Fine };
@@ -40,21 +54,22 @@ namespace RecordAudio {
 			}
 			System.Diagnostics.Debug.WriteLine("Using " + locationProvider + ".");
 		}
-
+	
 		public override void OnResume() {
 			base.OnResume();
+			locationManager.RequestLocationUpdates(locationProvider, 0, 0, (ILocationListener) this);
 			System.Diagnostics.Debug.WriteLine("OLÁ");
 		}
 		
 		public override void OnPause() {
 			base.OnPause();
-			locationManager.RemoveUpdates(this);
+			locationManager.RemoveUpdates((ILocationListener) this);
 			System.Diagnostics.Debug.WriteLine("ADEUS");
 		}
-
+		
 		public void OnLocationChanged(Location location) {
 			// Add marker of the current location to the map.
-			marker 				= new MarkerOptions();
+			var marker 		= new MarkerOptions();
 			var position 	= new LatLng(10, 10);
 			var title 		= "Localização Atual";
 			marker.SetPosition(position);
@@ -69,7 +84,6 @@ namespace RecordAudio {
 		public void OnProviderEnabled(string provider) {}
 		
 		public void OnStatusChanged(string provider, Availability status, Bundle extras) {}
-	}
-	
+	}	
 }
 

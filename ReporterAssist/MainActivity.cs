@@ -6,7 +6,7 @@ using System.IO;
 namespace RecordAudio {
   [Activity(Label = "Reporter Assist", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity {
-		Fragment[] fragments = { new RecordFragment(), Android.Gms.Maps.MapFragment.NewInstance() };
+		Fragment[] fragments = { new RecordFragment(), new MapsFragment() };
 
     // Filepath of the reporter assist folder.
     static string path 							= Environment.ExternalStorageDirectory.ToString() + "/ReporterAssist";
@@ -28,10 +28,6 @@ namespace RecordAudio {
       reporterAssistDir.Create();
 			RecordFragment aux = (RecordFragment) fragments[0];
 			aux.setPath(path);
-
-			// Set the callback method on map ready.
-			var aux_frag = (Android.Gms.Maps.MapFragment) fragments[1];
-			aux_frag.GetMapAsync(new MapsFragment());
     }
 
     void AddTabToActionBar(string text) {
