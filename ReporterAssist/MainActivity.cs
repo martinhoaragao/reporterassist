@@ -2,6 +2,8 @@
 using Android.OS;
 using Android.Util;
 using System.IO;
+using Shared;
+using System.Collections.Generic;
 
 namespace RecordAudio {
   [Activity(Label = "Reporter Assist", MainLauncher = true, Icon = "@drawable/icon")]
@@ -11,6 +13,8 @@ namespace RecordAudio {
     // Filepath of the reporter assist folder.
     static string path 							= Environment.ExternalStorageDirectory.ToString() + "/ReporterAssist";
     DirectoryInfo reporterAssistDir = new DirectoryInfo(path + "/");
+
+		public ReporterAssist reporterAssist = new ReporterAssist();
 
     protected override void OnCreate(Bundle savedInstanceState) {
       base.OnCreate(savedInstanceState);
@@ -43,7 +47,11 @@ namespace RecordAudio {
       Fragment frag = fragments[tab.Position];
       args.FragmentTransaction.Replace(Resource.Id.frameLayout1, frag);
     }
-  }
+  
+		public Dictionary<int, Project> GetProjects() {
+			return reporterAssist.Projects;
+		}
+	}
 }
 
 

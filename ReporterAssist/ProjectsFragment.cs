@@ -11,16 +11,15 @@ using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using Shared;
 
 namespace RecordAudio {
 	public class ProjectsFragment : Fragment {
 		ListView projectsListView;
+		ReporterAssist reporterAssist;
 	
-		public override void OnCreate(Bundle savedInstanceState)
-		{
+		public override void OnCreate(Bundle savedInstanceState) {
 			base.OnCreate(savedInstanceState);
-
-			// Create your fragment here
 		}
 
 		public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
