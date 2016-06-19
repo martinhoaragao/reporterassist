@@ -39,6 +39,7 @@ namespace Shared
 			id = _id;
 			title = _title;
 			description = _description;
+			state = new State();
 			state.Type = _state.Type;
 		}
 
