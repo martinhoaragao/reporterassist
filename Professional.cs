@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace Shared
@@ -19,48 +20,72 @@ namespace Shared
 			projects = new Dictionary<int, Project>();
 		}
 
-		public void AddProject(int id, string title, string description, DateTime begin, DateTime end)
+		public void AddProject(string title, string description, DateTime begin, DateTime end)
 		{
-			Project project = new Project(title, description, begin, end);
+			int id;
+			if (projects.Count() > 0)
+				id = projects.Keys.Max() + 1;
+			else id = 0;
+
+			Project project = new Project(id, title, description, begin, end);
 			projects.Add(id, project);
 		}
 
-		public void AddProject(int id, string title, string description, DateTime begin, DateTime end, State state)
+		public void AddProject(string title, string description, DateTime begin, DateTime end, State state)
 		{
-			Project project = new Project(title, description, begin, end, state);
+			int id;
+			if (projects.Count() > 0)
+				id = projects.Keys.Max() + 1;
+			else id = 0;
+
+			Project project = new Project(id, title, description, begin, end, state);
 			projects.Add(id, project);
 		}
 
 		public void AddProject(Project proj)
 		{
-			Project project = new Project(proj.Title, proj.Description, proj.Begin, proj.End, proj.Tasks, proj.Attachments, proj.Coordinates);
-			projects.Add(project);
+			int id;
+			if (projects.Count() > 0)
+				id = projects.Keys.Max() + 1;
+			else id = 0;
+
+			projects.Add(id, proj);
 		}
 
 
-		public void RemoveProject(int index)
+		public void RemoveProject(string title)
 		{
-			projects.Remove(index);
+			foreach (Project project in projects.Values.ToList())
+			{
+				if (project.Title == title)
+					projects.Remove(project.Id);
+			}
 		}
 
-		public void AddTask(int id, int idProject, string title, string note, State state)
+		public void AddTask(int idProject, string title, string note, State state)
 		{
-			projects[idProject].AddTask(id, title, note, state);
+			projects[idProject].AddTask(title, note, state);
 		}
 
-		public void AddAudio(int id, string path, int idProject)
+		public void AddTask(int idProject, Task task)
 		{
-			projects[idProject].AddAudio(id, path);
+			projects[idProject].AddTask(task);
 		}
 
-		public void AddImage(int id, string path, int idProject)
+
+		public void AddAudio(string path, int idProject)
 		{
-			projects[idProject].AddImage(id, path);
+			projects[idProject].AddAudio(path);
 		}
 
-		public void AddVideo(int id, string path, int idProject)
+		public void AddImage(string path, int idProject)
 		{
-			projects[idProject].AddVideo(id, path);
+			projects[idProject].AddImage(path);
+		}
+
+		public void AddVideo(string path, int idProject)
+		{
+			projects[idProject].AddVideo(path);
 		}
 
 		public void AddTimeStamp(float timestamp, int idAudio, int idProject)
@@ -75,7 +100,7 @@ namespace Shared
 
 		// Gets and Sets
 
-		Dictionary<int, Project> Projects
+		public Dictionary<int, Project> Projects
 		{
 			get
 			{

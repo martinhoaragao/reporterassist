@@ -10,6 +10,11 @@ namespace Shared
 			type = "To Do";
 		}
 
+		public State(string _type)
+		{
+			type = _type;
+		}
+
 		// Gets and Sets
 
 		public string Type

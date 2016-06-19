@@ -73,9 +73,9 @@ namespace Mac
 
 		private void updateTrabalhosPopUp()
 		{
-			List<Project> projetos = reporter.Projects;
+			Dictionary<int, Project> projetos = reporter.Projects;
 			TrabalhosPop.RemoveAllItems();
-			foreach (Project proj in projetos)
+			foreach (Project proj in projetos.Values)
 			{
 				TrabalhosPop.AddItem(proj.Title);
 			}
@@ -84,16 +84,16 @@ namespace Mac
 		private void updateTarefasPop()
 		{
 			TarefasPop.RemoveAllItems();
-			List<Project> projectos = reporter.Projects;
-			List<Task> tasks = new List<Task>();
-			foreach (Project proj in projectos)
+			Dictionary<int, Project> projectos = reporter.Projects;
+			Dictionary<int, Task> tasks = new Dictionary<int, Task>();
+			foreach (Project proj in projectos.Values)
 			{
 				if(proj.Title.Equals(tituloUsado))
 				{
 					tasks = proj.Tasks;
-					foreach (Task taks in tasks)
+					foreach (Task task in tasks.Values)
 					{
-						TarefasPop.AddItem(taks.Title);
+						TarefasPop.AddItem(task.Title);
 					}
 					break;
 				}
@@ -144,11 +144,11 @@ namespace Mac
 		{
 			if (!NovoTrabalhoTitulo.Equals("")){
 				string titulo = NovoTrabalhoTitulo.StringValue;
-				List<Project> projetos = reporter.Projects;
+				Dictionary<int, Project> projetos = reporter.Projects;
 				bool teste = false;
 
 				//testar se não existe titulo igual
-				foreach (Project proj in projetos)
+				foreach (Project proj in projetos.Values)
 				{
 					if (titulo.Equals(proj.Title))
 					{
@@ -196,8 +196,8 @@ namespace Mac
 			DateTime aux = new DateTime();
 			tituloUsado = TrabalhosPop.TitleOfSelectedItem;
 			string titulo = TrabalhosPop.TitleOfSelectedItem;
-			List<Project> projetos = reporter.Projects;
-			foreach (Project proj in projetos)
+			Dictionary<int, Project> projetos = reporter.Projects;
+			foreach (Project proj in projetos.Values)
 			{
 				if (titulo.Equals(proj.Title))
 				{
@@ -239,9 +239,9 @@ namespace Mac
 
 		partial void GuardarEdicaoAction(NSObject sender)
 		{
-			List<Project> projectos = reporter.Projects;
+			Dictionary<int, Project> projectos = reporter.Projects;
 			bool teste = false;
-			foreach (Project proj in projectos)
+			foreach (Project proj in projectos.Values)
 			{
 				if (TituloTrabalho.StringValue.Equals(proj.Title) && !TituloTrabalho.StringValue.Equals(tituloUsado))
 				{
@@ -252,7 +252,7 @@ namespace Mac
 			}
 			if (teste == false)
 			{
-				foreach (Project proj in projectos)
+				foreach (Project proj in projectos.Values)
 				{
 					if (tituloUsado.Equals(proj.Title))
 					{
@@ -296,17 +296,9 @@ namespace Mac
 			GuardarEdicaoTrabalho.Hidden = true;
 			CheckEditarDataFimButton.Hidden = true;
 
-			List<Project> projetos = reporter.Projects;
-			foreach (Project proj in projetos)
-			{
-				if (tituloUsado.Equals(proj.Title))
-				{
-					reporter.RemoveProject(projetos.IndexOf(proj));
-					updateTrabalhosPopUp();
-					break;
-				}
-			}
+			Dictionary<int, Project> projetos = reporter.Projects;
 
+			reporter.RemoveProject(tituloUsado);
 
 			EdicaoRemocaoTrabalhoLabel.StringValue = "Trabalho removido com sucesso";
 			EdicaoRemocaoTrabalhoLabel.Hidden = false;
@@ -314,22 +306,21 @@ namespace Mac
 
 		partial void AdicionarTarefa(NSObject sender)
 		{
-			List<Project> projetos = reporter.Projects;
+			Dictionary<int, Project> projetos = reporter.Projects;
 			Project aux = new Project();
-			Random rnd = new Random();
-			int id = rnd.Next(0, 10000);
-			int index = -1;
-			foreach (Project proj in projetos)
+
+			foreach (Project proj in projetos.Values)
 			{
 				if (tituloUsado.Equals(proj.Title))
 				{
 					aux = proj;
-					index = projetos.IndexOf(proj);
-					reporter.RemoveProject(index);
 					break;
 				}
 			}
-			aux.AddTask(id, NovaTarefaTitulo.StringValue, NovaTarefaDescricao.StringValue);
+
+			reporter.RemoveProject(tituloUsado);
+
+			aux.AddTask(NovaTarefaTitulo.StringValue, NovaTarefaDescricao.StringValue);
 			reporter.AddProject(aux);
 			updateTarefasPop();
 		}

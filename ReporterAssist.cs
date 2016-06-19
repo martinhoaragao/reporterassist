@@ -10,7 +10,8 @@ namespace Shared
 		public ReporterAssist()
 		{
 			users = new Dictionary<string, Professional>();
-			connectedUser = null;
+			AddUser("belo", "belinho", "Belo");
+			connectedUser = "belo";
 		}
 
 		public bool LogIn(string mail, string password)
@@ -32,52 +33,73 @@ namespace Shared
 		{
 		}
 
-		public void AddProject(int id, string title, string note, DateTime begin, DateTime end, string type, string mail)
+		public void AddProject(Project project)
 		{
-			State state = new State(type);
-			users[mail].AddProject(id, title, note, begin, end, state);
+			users[connectedUser].AddProject(project);
 		}
 
-		public void AddUser(int id, string mail, string password, string name)
+		public void AddProject(string title, string description, DateTime begin, DateTime end)
+		{
+			users[connectedUser].AddProject(title, description, begin, end);
+		}
+
+		public void AddUser(string mail, string password, string name)
 		{
 			Professional professional = new Professional(mail, password, name);
 			users.Add(mail, professional);
 		}
 
-		public void AddTask(int id, int idProject, string title, string note, string type, string mail)
+		public void AddTask(int idProject, string title, string note, string type)
 		{
 			State state = new State(type);
-			users[mail].AddTask(id, idProject, title, note, state);
+			users[connectedUser].AddTask(idProject, title, note, state);
 		}
 
-		public void AddAudio(int id, string path, int idProject, string mail)
+		public void AddTask(int idProject, Task task)
 		{
-			users[mail].AddAudio(id, path, idProject);
+			users[connectedUser].AddTask(idProject, task);
 		}
 
-		public void AddImage(int id, string path, int idProject, string mail)
+		public void AddAudio(string path, int idProject)
 		{
-			users[mail].AddImage(id, path, idProject);
+			users[connectedUser].AddAudio(path, idProject);
 		}
 
-		public void AddVideo(int id, string path, int idProject, string mail)
+		public void AddImage(string path, int idProject)
 		{
-			users[mail].AddVideo(id, path, idProject);
+			users[connectedUser].AddImage(path, idProject);
 		}
 
-		public void AddTimeStamp(float timestamp, int idAudio, int idProject, string mail)
+		public void AddVideo(string path, int idProject)
 		{
-			users[mail].AddTimeStamp(timestamp, idAudio, idProject);
+			users[connectedUser].AddVideo(path, idProject);
 		}
 
-		public void AddCoordinate(int idProject, float lat, float lon, DateTime date, string mail)
+		public void AddTimeStamp(float timestamp, int idAudio, int idProject)
 		{
-			users[mail].AddCoordinate(idProject, lat, lon, date);
+			users[connectedUser].AddTimeStamp(timestamp, idAudio, idProject);
+		}
+
+		public void AddCoordinate(int idProject, float lat, float lon, DateTime date)
+		{
+			users[connectedUser].AddCoordinate(idProject, lat, lon, date);
+		}
+
+		public void RemoveProject(string title)
+		{
+			users[connectedUser].RemoveProject(title);
 		}
 
 		// Gets and Sets
+		public Dictionary<int, Project> Projects
+		{
+			get
+			{
+				return users[connectedUser].Projects;
+			}
+		}
 
-		Dictionary<string, Professional> Users
+		public Dictionary<string, Professional> Users
 		{
 			get
 			{

@@ -12,6 +12,11 @@ namespace Shared
 			timestamps = new List<float>();
 		}
 
+		public Audio(int id, string name, string path) : base(id, name, path)
+		{
+			timestamps = new List<float>();
+		}
+
 		public void MarkTimestamp(float timestamp)
 		{
 			timestamps.Add(timestamp);

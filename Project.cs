@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace Shared
 {
 	public class Project
 	{
+		private int id;
 		private string title;
 		private string description;
 		private DateTime begin;
@@ -19,32 +21,40 @@ namespace Shared
 
 		public Project()
 		{
+			id = 0;
 			title = null;
 			begin = new DateTime();
 			description = null;
 			end = new DateTime();
 			state = new State();
-			tasks = new List<Task>();
-			attachments = new List<Attachment>();
+
+			tasks = new Dictionary<int, Task>();
+			audios = new Dictionary<int, Audio>();
+			videos = new Dictionary<int, Video>();
+			images = new Dictionary<int, Image>();
 			coordinates = new List<Coordinate>();
 		}
 
 
-		public Project(string _title, DateTime _begin)
+		public Project(int _id, string _title, DateTime _begin)
 		{
+			id = _id;
 			title = _title;
 			begin = _begin;
 			description = null;
 			end = new DateTime();
 			state = new State();
 
-			tasks = new List<Task>();
-			attachments = new List<Attachment>();
+			tasks = new Dictionary<int, Task>();
+			audios = new Dictionary<int, Audio>();
+			videos = new Dictionary<int, Video>();
+			images = new Dictionary<int, Image>();
 			coordinates = new List<Coordinate>();
 		}
 
-		public Project(string _title, string _description, DateTime _begin, DateTime _end)
+		public Project(int _id, string _title, string _description, DateTime _begin, DateTime _end)
 		{
+			id = _id;
 			title = _title;
 			begin = _begin;
 			description = _description;
@@ -57,13 +67,15 @@ namespace Shared
 			coordinates = new List <Coordinate>();
 		}
 
-		public Project(string _title, string _description, DateTime _begin, DateTime _end, State _state)
+		public Project(int _id, string _title, string _description, DateTime _begin, DateTime _end, State _state)
 		{
+			id = _id;
 			title = _title;
 			description = _description;
 			begin = _begin;
-			end = _e
+			end = _end;
 			state = _state;
+
 			tasks = new Dictionary<int, Task>();
 			audios = new Dictionary<int, Audio>();
 			videos = new Dictionary<int, Video>();
@@ -71,41 +83,78 @@ namespace Shared
 			coordinates = new List<Coordinate>();
 		}
 
-		public void AddTask(int id, string title, string description)
+		public void AddTask(string title, string description)
 		{
-			Task task = new Task(title, description, state);
+			int id;
+			if (tasks.Count() > 0)
+				id = tasks.Keys.Max() + 1;
+			else id = 0;
+
+			Task task = new Task(id, title, description, state);
 			tasks.Add(id, task);
 		}
 
-		public void AddTask(int id, string title, string description, State state)
+		public void AddTask(string title, string description, State state)
 		{
-			Task task = new Task(title, description, state);
+			int id;
+			if (tasks.Count() > 0)
+				id = tasks.Keys.Max() + 1;
+			else id = 0;
+
+			Task task = new Task(id, title, description, state);
 			tasks.Add(id, task);
 		}
+
+		public void AddTask(Task _task)
+		{
+			int id;
+			if (tasks.Count() > 0)
+				id = tasks.Keys.Max() + 1;
+			else id = 0;
+
+			Task task = new Task(id, _task.Title, _task.Description, _task.State);
+			tasks.Add(id, task);
+		}
+
 
 		public void RemoveTask(int index)
 		{
 			tasks.Remove(index);
 		}
 
-		public void AddAudio(int id, string path)
+		public void AddAudio(string path)
 		{
+			int id;
+			if (audios.Count() > 0)
+				id = audios.Keys.Max() + 1;
+			else id = 0;
+
 			string name = "Audio" + id;
-			Audio audio = new Audio(name, path);
+			Audio audio = new Audio(id, name, path);
 			audios.Add(id, audio);
 		}
 
-		public void AddImage(int id, string path)
+		public void AddImage(string path)
 		{
+			int id;
+			if (images.Count() > 0)
+				id = images.Keys.Max() + 1;
+			else id = 0;
+
 			string name = "Image" + id;
-			Image image = new Image(name, path);
+			Image image = new Image(id, name, path);
 			images.Add(id, image);
 		}
 
-		public void AddVideo(int id, string path)
+		public void AddVideo(string path)
 		{
+			int id;
+			if (videos.Count() > 0)
+				id = videos.Keys.Max() + 1;
+			else id = 0;
+
 			string name = "Video" + id;
-			Video video = new Video(name, path);
+			Video video = new Video(id, name, path);
 			videos.Add(id, video);
 		}
 
@@ -127,6 +176,14 @@ namespace Shared
 		}
 
 		// Gets and Sets
+
+		public int Id
+		{
+			get
+			{
+				return id;
+			}
+		}
 
 		public string Title
 		{

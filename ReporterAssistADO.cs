@@ -32,7 +32,7 @@ namespace Shared
 
 		}
 
-        static void AddUsers()
+        private void AddUsers()
         {
             int id;
             string name, mail, password;
@@ -45,13 +45,13 @@ namespace Shared
                 mail = reader.GetString(1);
                 password = reader.GetString(2);
                 id = reader.GetInt32(3);
-                reporterAssist.AddUser(id, mail, password, name);
+                reporterAssist.AddUser(mail, password, name);
             }
             reader.Close();
             conn.Close();
         }
 
-        static void AddProjects()
+        private void AddProjects()
         {
             int id;
             string title, note, type, mail;
@@ -70,14 +70,16 @@ namespace Shared
                 dateI = reader.GetDateTime(5);
                 dateF = reader.GetDateTime(6);
                 type = reader.GetString(8);
-                mail = reader.GetString(10);
-                reporterAssist.AddProject(id, title, note, dateI, dateF, type, mail);
+
+				Project project = new Project(id, title, note, dateI, dateF, new State(type));
+
+                reporterAssist.AddProject(project);
             }
             reader.Close();
             conn.Close();
         }
 
-        static void AddTasks()
+        private void AddTasks()
         {
             int id, idProject;
             string title, note, type, mail;
@@ -96,13 +98,16 @@ namespace Shared
                 idProject = reader.GetInt32(4);
                 type = reader.GetString(6);
                 mail = reader.GetString(15);
-                reporterAssist.AddTask(id, idProject, title, note, type, mail);
+
+				Task task = new Task(id, title, note, new State(type));
+
+                reporterAssist.AddTask(idProject, task);
             }
             reader.Close();
             conn.Close();
         }
 
-        static void AddAudios()
+        private void AddAudios()
         {
 
             SqlCommand cmd = new SqlCommand("SELECT * FROM Audio INNER JOIN Trabalho AS T " +
@@ -162,13 +167,13 @@ namespace Shared
                 stream.Close();
                 idProject = reader.GetInt32(2);
                 mail = reader.GetString(11);
-                reporterAssist.AddAudio(id, path, idProject, mail);
+                reporterAssist.AddAudio(path, idProject);
             }
             reader.Close();
             conn.Close();
         }
 
-        static void AddImages()
+        private void AddImages()
         {
 
             SqlCommand cmd = new SqlCommand("SELECT * FROM Imagem INNER JOIN Trabalho AS T " +
@@ -228,13 +233,13 @@ namespace Shared
                 stream.Close();
                 idProject = reader.GetInt32(2);
                 mail = reader.GetString(11);
-                reporterAssist.AddImage(id, path, idProject, mail);
+                reporterAssist.AddImage(path, idProject);
             }
             reader.Close();
             conn.Close();
         }
 
-        static void AddVideos()
+        private void AddVideos()
         {
 
             SqlCommand cmd = new SqlCommand("SELECT * FROM Video INNER JOIN Trabalho AS T " +
@@ -293,14 +298,13 @@ namespace Shared
                 writer.Close();
                 stream.Close();
                 idProject = reader.GetInt32(2);
-                mail = reader.GetString(11);
-                reporterAssist.AddVideo(id, path, idProject, mail);
+                reporterAssist.AddVideo(path, idProject);
             }
             reader.Close();
             conn.Close();
         }
 
-        static void AddTimeStamps()
+        private void AddTimeStamps()
         {
             int idAudio, idProject;
             string mail;
@@ -318,13 +322,13 @@ namespace Shared
                 idProject = reader.GetInt32(4);
                 mail = reader.GetString(13);
                 float time = (float)timestamp;
-                reporterAssist.AddTimeStamp(time, idAudio, idProject, mail);
+                reporterAssist.AddTimeStamp(time, idAudio, idProject);
             }
             reader.Close();
             conn.Close();
         }
 
-        static void AddCoordinates()
+        private void AddCoordinates()
         {
             int idProject;
             string mail;
@@ -346,7 +350,7 @@ namespace Shared
                 mail = reader.GetString(12);
                 float lat1 = (float)lat;
                 float lon1 = (float)lon;
-                reporterAssist.AddCoordinate(idProject, lat1, lon1, date, mail);
+                reporterAssist.AddCoordinate(idProject, lat1, lon1, date);
             }
             reader.Close();
             conn.Close();
