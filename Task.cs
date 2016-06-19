@@ -1,43 +1,46 @@
 ﻿using System;
 namespace Shared
 {
-	public class Task : ICloneable {
-		private int id;
+	public class Task
+	{
 		private string title;
 		private string description;
 		private State state;
 
 		public Task()
 		{
-			id = -1;
 			title = null;
 			description = null;
 			state = new State();
 		}
 
-		public Task(int _id, string _title) 
+		public Task(string _title)
 		{
-			id = _id;
 			title = _title;
-			description = null;
 			state = new State();
 		}
 
-		public Task(int _id, string _title, string _description)
+		public Task(string _title, string _description)
 		{
-			id = _id;
 			title = _title;
 			description = _description;
 			state = new State();
 		}
 
-		public void Update(string _title, string _description, State _state) 
+		public Task(string _title, string _description, State _state)
 		{
+			id = _id;
 			title = _title;
 			description = _description;
 			state = _state;
 		}
 
+		public void Update(string _title, string _description, State _state)
+		{
+			title = _title;
+			description = _description;
+			state = _state;
+		}
 
 		// Gets and sets
 
@@ -80,11 +83,5 @@ namespace Shared
 			}
 		}
 
-		public object Clone()
-		{
-			return this;
-		}
-
 	}
 }
-

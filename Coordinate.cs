@@ -5,11 +5,13 @@ namespace Shared
 	{
 		private float lat;
 		private float lon;
+		private DateTime date;
 
-		public Coordinate(float _lat, float _lon)
+		public Coordinate(float _lat, float _lon, DateTime _date)
 		{
 			lat = _lat;
 			lon = _lon;
+			date = _date;
 		}
 
 		// Gets and Sets

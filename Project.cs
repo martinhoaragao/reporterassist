@@ -11,9 +11,11 @@ namespace Shared
 		private DateTime end;
 		private State state;
 
-		private List<Task> tasks;
-		private List<Attachment> attachments;
-		private List<Coordinate> coordinates;
+		private Dictionary<int, Task> tasks;
+		private Dictionary<int, Audio> audios;
+		private Dictionary<int, Video> videos;
+		private Dictionary<int, Image> images;
+		private List <Coordinate> coordinates;
 
 		public Project()
 		{
@@ -48,69 +50,81 @@ namespace Shared
 			description = _description;
 			end = _end; 
 			state = new State();
-
-			tasks = new List<Task>();
-			attachments = new List<Attachment>();
-			coordinates = new List<Coordinate>();
-
+			tasks = new Dictionary<int, Task>();
+			audios = new Dictionary<int, Audio>();
+			videos = new Dictionary<int, Video>();
+			images = new Dictionary<int, Image>();
+			coordinates = new List <Coordinate>();
 		}
 
-		public Project(string _title, string _description, DateTime _begin, DateTime _end, List<Task> _tasks, List<Attachment> _attach, List<Coordinate> _coord)
+		public Project(string _title, string _description, DateTime _begin, DateTime _end, State _state)
 		{
 			title = _title;
-			begin = _begin;
 			description = _description;
-			end = _end;
-			state = new State();
-
-			tasks = new List<Task>(_tasks);
-			attachments = new List<Attachment>(_attach);
-			coordinates = new List<Coordinate>(_coord);
-
+			begin = _begin;
+			end = _e
+			state = _state;
+			tasks = new Dictionary<int, Task>();
+			audios = new Dictionary<int, Audio>();
+			videos = new Dictionary<int, Video>();
+			images = new Dictionary<int, Image>();
+			coordinates = new List<Coordinate>();
 		}
 
-		public void AddTask(int id, string title)
+		public void AddTask(int id, string title, string description)
 		{
-			Task task = new Task(id, title);
-			tasks.Add(task);
+			Task task = new Task(title, description, state);
+			tasks.Add(id, task);
 		}
 
-		public void AddTask(int id, string title, string descricao)
+		public void AddTask(int id, string title, string description, State state)
 		{
-			Task task = new Task(id, title, descricao);
-			tasks.Add(task);
+			Task task = new Task(title, description, state);
+			tasks.Add(id, task);
 		}
 
 		public void RemoveTask(int index)
 		{
-			tasks.RemoveAt(index);
+			tasks.Remove(index);
 		}
 
-		public void AddAudio(string name, string path)
+		public void AddAudio(int id, string path)
 		{
-			Audio attachment = new Audio(name, path);
-			attachments.Add(attachment);
+			string name = "Audio" + id;
+			Audio audio = new Audio(name, path);
+			audios.Add(id, audio);
 		}
 
-		public void AddImage(string name, string path)
+		public void AddImage(int id, string path)
 		{
-			Image attachment = new Image(name, path);
-			attachments.Add(attachment);
+			string name = "Image" + id;
+			Image image = new Image(name, path);
+			images.Add(id, image);
 		}
 
-		public void AddVideo(string name, string path)
+		public void AddVideo(int id, string path)
 		{
-			Video attachment = new Video(name, path);
-			attachments.Add(attachment);
+			string name = "Video" + id;
+			Video video = new Video(name, path);
+			videos.Add(id, video);
 		}
 
-
-		public void AddCoordinate(float lat, float lon)
+		public void AddCoordinate(int id, float lat, float lon, DateTime date)
 		{
-			Coordinate coordinate = new Coordinate(lat, lon);
+			Coordinate coordinate = new Coordinate(lat, lon, date);
 			coordinates.Add(coordinate);
 		}
 
+		public void AddTimeStamp(float timestamp, int idAudio)
+		{
+			audios[idAudio].MarkTimestamp(timestamp);
+		}
+
+		public void AddCoordinate(float lat, float lon, DateTime date)
+		{
+			Coordinate coordinate = new Coordinate(lat, lon, date);
+			coordinates.Add(coordinate);
+		}
 
 		// Gets and Sets
 
@@ -179,7 +193,7 @@ namespace Shared
 			}
 		}
 
-		public List<Task> Tasks
+		public Dictionary<int,Task> Tasks
 		{
 			get
 			{
@@ -187,11 +201,27 @@ namespace Shared
 			}
 		}
 
-		public List<Attachment> Attachments
+		public Dictionary<int, Audio> Audios
 		{
 			get
 			{
-				return attachments;
+				return audios;
+			}
+		}
+
+		public Dictionary<int, Video> Videos
+		{
+			get
+			{
+				return videos;
+			}
+		}
+
+		public Dictionary<int, Image> Images
+		{
+			get
+			{
+				return images;
 			}
 		}
 
@@ -205,4 +235,3 @@ namespace Shared
 
 	}
 }
-
