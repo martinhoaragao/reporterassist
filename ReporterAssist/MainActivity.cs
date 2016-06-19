@@ -28,6 +28,10 @@ namespace RecordAudio {
       reporterAssistDir.Create();
 			RecordFragment aux = (RecordFragment) fragments[0];
 			aux.setPath(path);
+
+			// Set the callback method on map ready.
+			var aux_frag = (Android.Gms.Maps.MapFragment) fragments[1];
+			aux_frag.GetMapAsync(new MapsFragment());
     }
 
     void AddTabToActionBar(string text) {
