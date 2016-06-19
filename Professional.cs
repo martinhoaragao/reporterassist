@@ -44,12 +44,7 @@ namespace Shared
 
 		public void AddProject(Project proj)
 		{
-			int id;
-			if (projects.Count() > 0)
-				id = projects.Keys.Max() + 1;
-			else id = 0;
-
-			projects.Add(id, proj);
+			projects.Add(proj.Id, proj);
 		}
 
 

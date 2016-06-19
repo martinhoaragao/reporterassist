@@ -25,15 +25,6 @@ namespace Shared
 			state.Type = "nao concluido";
 		}
 
-		public Task(int _id, string _title, string _description, State _state)
-		{
-			id = _id;
-			title = _title;
-			description = _description;
-			state = new State();
-			state.Type = _state.Type;
-		}
-
 		public Task(int _id, string _title, string _description)
 		{
 			id = _id;
@@ -69,7 +60,7 @@ namespace Shared
 
 		// Gets and sets
 
-		int Id
+		public int Id
 		{
 			get
 			{

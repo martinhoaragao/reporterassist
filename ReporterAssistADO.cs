@@ -73,7 +73,7 @@ namespace Shared
 
 				Project project = new Project(id, title, note, dateI, dateF, new State(type));
 
-                reporterAssist.AddProject(project);
+				reporterAssist.AddProject(project);
             }
             reader.Close();
             conn.Close();

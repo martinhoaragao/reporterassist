@@ -33,14 +33,19 @@ namespace Shared
 		{
 		}
 
-		public void AddProject(Project project)
-		{
-			users[connectedUser].AddProject(project);
-		}
-
 		public void AddProject(string title, string description, DateTime begin, DateTime end)
 		{
 			users[connectedUser].AddProject(title, description, begin, end);
+		}
+
+		public void AddProject(string title, string description, DateTime begin, DateTime end, State state)
+		{
+			users[connectedUser].AddProject(title, description, begin, end, state);
+		}
+
+		public void AddProject(Project proj)
+		{
+			users[connectedUser].AddProject(proj);
 		}
 
 		public void AddUser(string mail, string password, string name)

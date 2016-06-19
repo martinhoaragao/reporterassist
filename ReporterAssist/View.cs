@@ -200,7 +200,6 @@ namespace Mac
 					}
 					else state.Type = "a fazer";
 
-
 					reporter.AddProject(titulo, descricao, inicio, fim, state);
 					updateTrabalhosPopUp();
 					AdicionarTrabalhoLabel.StringValue = "Trabalho Adicionado com sucesso";
@@ -373,12 +372,14 @@ namespace Mac
 		{
 			Dictionary<int, Project> projetos = reporter.Projects;
 			Project aux = new Project();
+			bool teste = false;
+
 
 			foreach (Project proj in projetos.Values)
 			{
 				if (proj.Title.Equals(tituloUsado))
 				{
-					foreach (Task task in proj.Tasks)
+					foreach (Task task in proj.Tasks.Values)
 					{
 						if (task.Title.Equals(NovaTarefaTitulo.StringValue))
 						{
@@ -392,21 +393,19 @@ namespace Mac
 			}
 			if (!teste)
 			{
-				foreach (Project proj in projetos)
+				int idProject = 0;
+				foreach (Project proj in projetos.Values)
 				{
 					if (tituloUsado.Equals(proj.Title))
 					{
-						aux = proj;
-						index = projetos.IndexOf(proj);
-						reporter.RemoveProject(index);
+						idProject = proj.Id;
+						reporter.RemoveProject(tituloUsado);
+						reporter.AddTask(idProject, NovaTarefaTitulo.StringValue, NovaTarefaDescricao.StringValue, "nao concluido");
+						AddTarefaLabel.StringValue = "Tarefa adicionado com sucesso";
 						break;
 					}
 				}
-				State state = new State();
-				state.Type = "nao concluido";
-				aux.AddTask(id, NovaTarefaTitulo.StringValue, NovaTarefaDescricao.StringValue, state);
-				reporter.AddProject(aux);
-				AddTarefaLabel.StringValue = "Tarefa adicionado com sucesso";
+
 				updateTarefasPop();
 			}
 			AddTarefaLabel.Hidden = false;
@@ -419,11 +418,11 @@ namespace Mac
 			tarefaUsada = TarefasPop.TitleOfSelectedItem;
 
 			VisualizarTituloTarefaText.StringValue = tarefaUsada;
-			foreach (Project proj in reporter.Projects)
+			foreach (Project proj in reporter.Projects.Values)
 			{
 				if (proj.Title.Equals(tituloUsado))
 				{
-					foreach (Task task in proj.Tasks)
+					foreach (Task task in proj.Tasks.Values)
 					{
 						if (task.Title.Equals(tarefaUsada))
 						{
@@ -456,11 +455,11 @@ namespace Mac
 		{
 			bool teste = false;
 
-			foreach (Project proj in reporter.Projects)
+			foreach (Project proj in reporter.Projects.Values)
 			{
 				if (proj.Title.Equals(tituloUsado))
 				{
-					foreach (Task task in proj.Tasks)
+					foreach (Task task in proj.Tasks.Values)
 					{
 						if (task.Title.Equals(VisualizarTituloTarefaText.StringValue) && !tarefaUsada.Equals(VisualizarTituloTarefaText.StringValue))
 						{
@@ -474,11 +473,11 @@ namespace Mac
 			}
 			if (!teste)
 			{
-				foreach (Project proj in reporter.Projects)
+				foreach (Project proj in reporter.Projects.Values)
 				{
 					if (proj.Title.Equals(tituloUsado))
 					{
-						foreach (Task task in proj.Tasks)
+						foreach (Task task in proj.Tasks.Values)
 						{
 							if (task.Title.Equals(tarefaUsada))
 							{
@@ -517,15 +516,15 @@ namespace Mac
 			GravarTarefaButton.Hidden = true;
 			int index = -1;
 			EditarRemoverTarefaLabel.StringValue = "Tarefa inexistente";
-			foreach (Project proj in reporter.Projects)
+			foreach (Project proj in reporter.Projects.Values)
 			{
 				if (proj.Title.Equals(tituloUsado))
 				{
-					foreach (Task task in proj.Tasks)
+					foreach (Task task in proj.Tasks.Values)
 					{
 						if (task.Title.Equals(VisualizarTituloTarefaText.StringValue))
 						{
-							index = proj.Tasks.IndexOf(task);
+							index = task.Id;
 							proj.RemoveTask(index);
 							updateTarefasPop();
 							EditarRemoverTarefaLabel.StringValue = "Tarefa removida com sucesso";
