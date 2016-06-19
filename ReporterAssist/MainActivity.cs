@@ -6,7 +6,7 @@ using System.IO;
 namespace RecordAudio {
   [Activity(Label = "Reporter Assist", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity {
-		Fragment[] fragments = { new RecordFragment(), new MapsFragment() };
+		Fragment[] fragments = { new ProjectsFragment(), new RecordFragment(), new MapsFragment() };
 
     // Filepath of the reporter assist folder.
     static string path 							= Environment.ExternalStorageDirectory.ToString() + "/ReporterAssist";
@@ -21,12 +21,13 @@ namespace RecordAudio {
       SetContentView(Resource.Layout.Main);
 
       // Create the tabs to be displayed.
+      AddTabToActionBar("Projetos");
       AddTabToActionBar("Gravação");
       AddTabToActionBar("Mapas");
 
       // Create reporter assist directory and set recording fragment path.
       reporterAssistDir.Create();
-			RecordFragment aux = (RecordFragment) fragments[0];
+			RecordFragment aux = (RecordFragment) fragments[1];
 			aux.setPath(path);
     }
 

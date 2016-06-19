@@ -467,32 +467,35 @@ namespace RecordAudio
 			// aapt resource value: 0x7f090015
 			public const int place_autocomplete_separator = 2131296277;
 			
+			// aapt resource value: 0x7f09001a
+			public const int projectsListView = 2131296282;
+			
 			// aapt resource value: 0x7f090003
 			public const int satellite = 2131296259;
 			
 			// aapt resource value: 0x7f090006
 			public const int standard = 2131296262;
 			
-			// aapt resource value: 0x7f09001a
-			public const int startButton = 2131296282;
-			
 			// aapt resource value: 0x7f09001b
-			public const int stopButton = 2131296283;
+			public const int startButton = 2131296283;
+			
+			// aapt resource value: 0x7f09001c
+			public const int stopButton = 2131296284;
 			
 			// aapt resource value: 0x7f090004
 			public const int terrain = 2131296260;
 			
-			// aapt resource value: 0x7f09001d
-			public const int textView1 = 2131296285;
+			// aapt resource value: 0x7f09001e
+			public const int textView1 = 2131296286;
 			
-			// aapt resource value: 0x7f09001c
-			public const int timestampButton = 2131296284;
+			// aapt resource value: 0x7f09001d
+			public const int timestampButton = 2131296285;
 			
 			// aapt resource value: 0x7f09000f
 			public const int timestamps = 2131296271;
 			
-			// aapt resource value: 0x7f09001e
-			public const int timestampsListView = 2131296286;
+			// aapt resource value: 0x7f09001f
+			public const int timestampsListView = 2131296287;
 			
 			// aapt resource value: 0x7f090007
 			public const int wide = 2131296263;
@@ -545,7 +548,10 @@ namespace RecordAudio
 			public const int place_autocomplete_progress = 2130968581;
 			
 			// aapt resource value: 0x7f040006
-			public const int RecordingFragment = 2130968582;
+			public const int ProjectsFragment = 2130968582;
+			
+			// aapt resource value: 0x7f040007
+			public const int RecordingFragment = 2130968583;
 			
 			static Layout()
 			{

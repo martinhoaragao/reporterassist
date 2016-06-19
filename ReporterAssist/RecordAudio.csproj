@@ -64,6 +64,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MapsFragment.cs" />
     <Compile Include="RecordFragment.cs" />
+    <Compile Include="ProjectsFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -82,6 +83,7 @@
     <AndroidResource Include="Resources\drawable\icon.png" />
     <AndroidResource Include="Resources\layout\RecordingFragment.axml" />
     <AndroidResource Include="Resources\layout\MapsFragment.axml" />
+    <AndroidResource Include="Resources\layout\ProjectsFragment.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
