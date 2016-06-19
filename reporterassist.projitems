@@ -19,6 +19,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Coordinate.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ReporterAssist.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Professional.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ReporterAssistADO.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Attachment\" />

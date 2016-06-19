@@ -1,23 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Shared {
-	public class Audio : Attachment {
-		private List<DateTime> timestamps;
+namespace Shared
+{
+	public class Audio : Attachment
+	{
+		private List<float> timestamps;
 
-		public Audio (string name, string path) : base(name, path) 
+		public Audio(string name, string path) : base(name, path)
 		{
-			timestamps = new List<DateTime>();
+			timestamps = new List<float>();
 		}
 
-		public void MarkTimestamp(DateTime timestamp) 
+		public Audio(int id, string name, string path) : base(id, name, path)
+		{
+			timestamps = new List<float>();
+		}
+
+		public void MarkTimestamp(float timestamp)
 		{
 			timestamps.Add(timestamp);
 		}
 
 		// Gets and Sets
 
-		public List<DateTime> Timestamps
+		public List<float> Timestamps
 		{
 			get
 			{
