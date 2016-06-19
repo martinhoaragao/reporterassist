@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <scenes>
@@ -679,11 +680,11 @@
                                 <tabViewItems>
                                     <tabViewItem label="Login" identifier="1" id="2Ug-s6-YHG">
                                         <view key="view" id="AP2-lf-8Hf">
-                                            <rect key="frame" x="10" y="33" width="131" height="0.0"/>
+                                            <rect key="frame" x="10" y="33" width="541" height="308"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FN4-QD-omV">
-                                                    <rect key="frame" x="23" y="-58" width="66" height="17"/>
+                                                    <rect key="frame" x="23" y="250" width="66" height="17"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Username" id="COU-fE-hBn">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -691,7 +692,7 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dOJ-F9-cAi">
-                                                    <rect key="frame" x="23" y="-161" width="63" height="17"/>
+                                                    <rect key="frame" x="23" y="147" width="63" height="17"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Password" id="36d-pA-dHE">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -699,7 +700,7 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <secureTextField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vP8-n6-h6I">
-                                                    <rect key="frame" x="211" y="-164" width="245" height="22"/>
+                                                    <rect key="frame" x="211" y="144" width="245" height="22"/>
                                                     <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="G27-oi-qbg">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -710,7 +711,7 @@
                                                     </secureTextFieldCell>
                                                 </secureTextField>
                                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JIe-dO-VXg">
-                                                    <rect key="frame" x="229" y="-298" width="83" height="32"/>
+                                                    <rect key="frame" x="229" y="10" width="83" height="32"/>
                                                     <buttonCell key="cell" type="push" title="Login" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Yg9-0w-c0n">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="system"/>
@@ -720,7 +721,7 @@
                                                     </connections>
                                                 </button>
                                                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="82n-Cm-f2K">
-                                                    <rect key="frame" x="211" y="-61" width="245" height="22"/>
+                                                    <rect key="frame" x="211" y="247" width="245" height="22"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="XUC-13-cGe">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -728,7 +729,7 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wqE-Og-U74">
-                                                    <rect key="frame" x="23" y="-262" width="503" height="17"/>
+                                                    <rect key="frame" x="23" y="46" width="503" height="17"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="Xz0-9B-XPw">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -736,7 +737,7 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8oL-zI-qi0">
-                                                    <rect key="frame" x="229" y="-298" width="83" height="32"/>
+                                                    <rect key="frame" x="229" y="10" width="83" height="32"/>
                                                     <buttonCell key="cell" type="push" title="Logout" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BIR-em-zsf">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="system"/>
@@ -762,18 +763,8 @@
                                                                 <rect key="frame" x="10" y="33" width="540" height="283"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <subviews>
-                                                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8cY-Hv-rPu">
-                                                                        <rect key="frame" x="193" y="82" width="155" height="32"/>
-                                                                        <buttonCell key="cell" type="push" title="Visualizar Trabalho" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZsM-8G-dKK">
-                                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                            <font key="font" metaFont="system"/>
-                                                                        </buttonCell>
-                                                                        <connections>
-                                                                            <action selector="VerTarefasAction:" target="XfG-lQ-9wD" id="zQq-iE-xso"/>
-                                                                        </connections>
-                                                                    </button>
                                                                     <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dMb-gB-aLL">
-                                                                        <rect key="frame" x="103" y="167" width="335" height="26"/>
+                                                                        <rect key="frame" x="102" y="167" width="335" height="26"/>
                                                                         <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="27Z-H4-Agn" id="Zva-5d-A3L">
                                                                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                                             <font key="font" metaFont="menu"/>
@@ -786,6 +777,16 @@
                                                                             </menu>
                                                                         </popUpButtonCell>
                                                                     </popUpButton>
+                                                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8cY-Hv-rPu">
+                                                                        <rect key="frame" x="193" y="82" width="155" height="32"/>
+                                                                        <buttonCell key="cell" type="push" title="Visualizar Trabalho" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZsM-8G-dKK">
+                                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                        <connections>
+                                                                            <action selector="VerTarefasAction:" target="XfG-lQ-9wD" id="zQq-iE-xso"/>
+                                                                        </connections>
+                                                                    </button>
                                                                 </subviews>
                                                             </view>
                                                         </tabViewItem>
@@ -893,7 +894,7 @@
                                                             </view>
                                                         </tabViewItem>
                                                         <tabViewItem label="Visualizar Trabalho" identifier="" id="7lY-rm-fVf">
-                                                            <view key="view" ambiguous="YES" id="eLk-fO-oNU">
+                                                            <view key="view" id="eLk-fO-oNU">
                                                                 <rect key="frame" x="10" y="33" width="540" height="283"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <subviews>
@@ -1026,7 +1027,7 @@
                                                             </view>
                                                         </tabViewItem>
                                                         <tabViewItem label="Tarefas" identifier="" id="QMC-8K-82h">
-                                                            <view key="view" id="Gn7-Id-qWJ">
+                                                            <view key="view" ambiguous="YES" id="Gn7-Id-qWJ">
                                                                 <rect key="frame" x="10" y="33" width="540" height="283"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <subviews>
@@ -1035,12 +1036,12 @@
                                                                         <font key="font" metaFont="system"/>
                                                                         <tabViewItems>
                                                                             <tabViewItem label="Tarefas" identifier="1" id="hWG-Jq-nOW">
-                                                                                <view key="view" ambiguous="YES" id="FIG-pp-hb3">
-                                                                                    <rect key="frame" x="10" y="33" width="258" height="0.0"/>
+                                                                                <view key="view" id="FIG-pp-hb3">
+                                                                                    <rect key="frame" x="10" y="33" width="531" height="255"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
                                                                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kk3-QD-66i">
-                                                                                            <rect key="frame" x="90" y="-89" width="335" height="26"/>
+                                                                                            <rect key="frame" x="90" y="166" width="335" height="26"/>
                                                                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="y6U-1Y-U8T">
                                                                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                                                                 <font key="font" metaFont="menu"/>
@@ -1054,7 +1055,7 @@
                                                                                             </popUpButtonCell>
                                                                                         </popUpButton>
                                                                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MXd-xt-Xsv">
-                                                                                            <rect key="frame" x="192" y="-178" width="147" height="32"/>
+                                                                                            <rect key="frame" x="192" y="77" width="147" height="32"/>
                                                                                             <buttonCell key="cell" type="push" title="Visualizar Tarefas" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="izp-Sm-54T">
                                                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                                                 <font key="font" metaFont="system"/>
@@ -1064,7 +1065,7 @@
                                                                                 </view>
                                                                             </tabViewItem>
                                                                             <tabViewItem label="Adicionar Tarefas" identifier="2" id="LSH-Yh-lti">
-                                                                                <view key="view" id="dRG-N3-yyn">
+                                                                                <view key="view" ambiguous="YES" id="dRG-N3-yyn">
                                                                                     <rect key="frame" x="10" y="33" width="531" height="255"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>

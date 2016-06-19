@@ -13,6 +13,9 @@ namespace Mac
 	partial class View
 	{
 		[Outlet]
+		AppKit.NSTextField AddTarefaLabel { get; set; }
+
+		[Outlet]
 		AppKit.NSTextField AdicionarTrabalhoLabel { get; set; }
 
 		[Outlet]
@@ -20,6 +23,12 @@ namespace Mac
 
 		[Outlet]
 		AppKit.NSButton CheckFim { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField ConcluidoTarefaLabel { get; set; }
+
+		[Outlet]
+		AppKit.NSButton ConcluirTarefaButton { get; set; }
 
 		[Outlet]
 		AppKit.NSTextField DataFimLabel { get; set; }
@@ -46,7 +55,16 @@ namespace Mac
 		AppKit.NSTextField EdicaoRemocaoTrabalhoLabel { get; set; }
 
 		[Outlet]
+		AppKit.NSTextField EditarRemoverTarefaLabel { get; set; }
+
+		[Outlet]
+		AppKit.NSButton EditarTarefaButton { get; set; }
+
+		[Outlet]
 		AppKit.NSButton EditarTrabalhoButton { get; set; }
+
+		[Outlet]
+		AppKit.NSButton GravarTarefaButton { get; set; }
 
 		[Outlet]
 		AppKit.NSButton GuardarEdicaoTrabalho { get; set; }
@@ -67,6 +85,9 @@ namespace Mac
 		AppKit.NSTextField NovaTarefaTitulo { get; set; }
 
 		[Outlet]
+		AppKit.NSButton NovoTrabalhoConluirButton { get; set; }
+
+		[Outlet]
 		AppKit.NSTextField NovoTrabalhoDescricao { get; set; }
 
 		[Outlet]
@@ -76,10 +97,19 @@ namespace Mac
 		AppKit.NSDatePicker NovoTrabalhoInicio { get; set; }
 
 		[Outlet]
+		AppKit.NSTextField NovoTrabalhoLabelState { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField NovoTrabalhoStateLabel { get; set; }
+
+		[Outlet]
 		AppKit.NSTextField NovoTrabalhoTitulo { get; set; }
 
 		[Outlet]
 		AppKit.NSSecureTextField PasswordText { get; set; }
+
+		[Outlet]
+		AppKit.NSButton RemoverTarefaButton { get; set; }
 
 		[Outlet]
 		AppKit.NSButton RemoverTrabalhoButton { get; set; }
@@ -106,16 +136,34 @@ namespace Mac
 		AppKit.NSTextField UsernameText { get; set; }
 
 		[Outlet]
-		AppKit.NSButton VisualizarTarefasAction { get; set; }
+		AppKit.NSTextField VisualizarDescricaoTarefaLabel { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField VisualizarDescricaoTarefaText { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField VisualizarEstadoTarefaLabel { get; set; }
 
 		[Outlet]
 		AppKit.NSButton VisualizarTarefasButton { get; set; }
 
+		[Outlet]
+		AppKit.NSTextField VisualizarTituloTarefaLabel { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField VisualizarTituloTarefaText { get; set; }
+
 		[Action ("AdicionarTarefa:")]
 		partial void AdicionarTarefa (Foundation.NSObject sender);
 
+		[Action ("EditarTarefaAction:")]
+		partial void EditarTarefaAction (Foundation.NSObject sender);
+
 		[Action ("EditarTrabalho:")]
 		partial void EditarTrabalho (Foundation.NSObject sender);
+
+		[Action ("GravarTarefaAction:")]
+		partial void GravarTarefaAction (Foundation.NSObject sender);
 
 		[Action ("GuardarEdicaoAction:")]
 		partial void GuardarEdicaoAction (Foundation.NSObject sender);
@@ -129,14 +177,130 @@ namespace Mac
 		[Action ("NovoTrabalhoAction:")]
 		partial void NovoTrabalhoAction (Foundation.NSObject sender);
 
+		[Action ("RemoverTarefaAction:")]
+		partial void RemoverTarefaAction (Foundation.NSObject sender);
+
 		[Action ("RemoverTrabalho:")]
 		partial void RemoverTrabalho (Foundation.NSObject sender);
 
 		[Action ("VerTarefasAction:")]
 		partial void VerTarefasAction (Foundation.NSObject sender);
+
+		[Action ("VisualizarTarefasAction:")]
+		partial void VisualizarTarefasAction (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (VisualizarEstadoTarefaLabel != null) {
+				VisualizarEstadoTarefaLabel.Dispose ();
+				VisualizarEstadoTarefaLabel = null;
+			}
+
+			if (VisualizarDescricaoTarefaLabel != null) {
+				VisualizarDescricaoTarefaLabel.Dispose ();
+				VisualizarDescricaoTarefaLabel = null;
+			}
+
+			if (VisualizarTituloTarefaLabel != null) {
+				VisualizarTituloTarefaLabel.Dispose ();
+				VisualizarTituloTarefaLabel = null;
+			}
+
+			if (NovoTrabalhoConluirButton != null) {
+				NovoTrabalhoConluirButton.Dispose ();
+				NovoTrabalhoConluirButton = null;
+			}
+
+			if (NovoTrabalhoLabelState != null) {
+				NovoTrabalhoLabelState.Dispose ();
+				NovoTrabalhoLabelState = null;
+			}
+
+			if (NovoTrabalhoStateLabel != null) {
+				NovoTrabalhoStateLabel.Dispose ();
+				NovoTrabalhoStateLabel = null;
+			}
+
+			if (AdicionarTrabalhoLabel != null) {
+				AdicionarTrabalhoLabel.Dispose ();
+				AdicionarTrabalhoLabel = null;
+			}
+
+			if (CheckEditarDataFimButton != null) {
+				CheckEditarDataFimButton.Dispose ();
+				CheckEditarDataFimButton = null;
+			}
+
+			if (CheckFim != null) {
+				CheckFim.Dispose ();
+				CheckFim = null;
+			}
+
+			if (DataFimLabel != null) {
+				DataFimLabel.Dispose ();
+				DataFimLabel = null;
+			}
+
+			if (DataFimNameLabel != null) {
+				DataFimNameLabel.Dispose ();
+				DataFimNameLabel = null;
+			}
+
+			if (DataFimTrabalho != null) {
+				DataFimTrabalho.Dispose ();
+				DataFimTrabalho = null;
+			}
+
+			if (DataInicioLabel != null) {
+				DataInicioLabel.Dispose ();
+				DataInicioLabel = null;
+			}
+
+			if (DataInicioTrabalho != null) {
+				DataInicioTrabalho.Dispose ();
+				DataInicioTrabalho = null;
+			}
+
+			if (DescricaoLabel != null) {
+				DescricaoLabel.Dispose ();
+				DescricaoLabel = null;
+			}
+
+			if (DescricaoTrabalho != null) {
+				DescricaoTrabalho.Dispose ();
+				DescricaoTrabalho = null;
+			}
+
+			if (EdicaoRemocaoTrabalhoLabel != null) {
+				EdicaoRemocaoTrabalhoLabel.Dispose ();
+				EdicaoRemocaoTrabalhoLabel = null;
+			}
+
+			if (EditarTrabalhoButton != null) {
+				EditarTrabalhoButton.Dispose ();
+				EditarTrabalhoButton = null;
+			}
+
+			if (GuardarEdicaoTrabalho != null) {
+				GuardarEdicaoTrabalho.Dispose ();
+				GuardarEdicaoTrabalho = null;
+			}
+
+			if (LoginButton != null) {
+				LoginButton.Dispose ();
+				LoginButton = null;
+			}
+
+			if (LoginLabel != null) {
+				LoginLabel.Dispose ();
+				LoginLabel = null;
+			}
+
+			if (LogoutButton != null) {
+				LogoutButton.Dispose ();
+				LogoutButton = null;
+			}
+
 			if (NovaTarefaDescricao != null) {
 				NovaTarefaDescricao.Dispose ();
 				NovaTarefaDescricao = null;
@@ -147,129 +311,9 @@ namespace Mac
 				NovaTarefaTitulo = null;
 			}
 
-			if (VisualizarTarefasAction != null) {
-				VisualizarTarefasAction.Dispose ();
-				VisualizarTarefasAction = null;
-			}
-
-			if (VisualizarTarefasButton != null) {
-				VisualizarTarefasButton.Dispose ();
-				VisualizarTarefasButton = null;
-			}
-
-			if (TarefasPop != null) {
-				TarefasPop.Dispose ();
-				TarefasPop = null;
-			}
-
-			if (CheckEditarDataFimButton != null) {
-				CheckEditarDataFimButton.Dispose ();
-				CheckEditarDataFimButton = null;
-			}
-
-			if (GuardarEdicaoTrabalho != null) {
-				GuardarEdicaoTrabalho.Dispose ();
-				GuardarEdicaoTrabalho = null;
-			}
-
-			if (EdicaoRemocaoTrabalhoLabel != null) {
-				EdicaoRemocaoTrabalhoLabel.Dispose ();
-				EdicaoRemocaoTrabalhoLabel = null;
-			}
-
-			if (AdicionarTrabalhoLabel != null) {
-				AdicionarTrabalhoLabel.Dispose ();
-				AdicionarTrabalhoLabel = null;
-			}
-
-			if (DataFimLabel != null) {
-				DataFimLabel.Dispose ();
-				DataFimLabel = null;
-			}
-
-			if (RemoverTrabalhoButton != null) {
-				RemoverTrabalhoButton.Dispose ();
-				RemoverTrabalhoButton = null;
-			}
-
-			if (EditarTrabalhoButton != null) {
-				EditarTrabalhoButton.Dispose ();
-				EditarTrabalhoButton = null;
-			}
-
-			if (DataFimNameLabel != null) {
-				DataFimNameLabel.Dispose ();
-				DataFimNameLabel = null;
-			}
-
-			if (TituloLabel != null) {
-				TituloLabel.Dispose ();
-				TituloLabel = null;
-			}
-
-			if (DescricaoLabel != null) {
-				DescricaoLabel.Dispose ();
-				DescricaoLabel = null;
-			}
-
-			if (DataInicioLabel != null) {
-				DataInicioLabel.Dispose ();
-				DataInicioLabel = null;
-			}
-
-			if (TituloTrabalho != null) {
-				TituloTrabalho.Dispose ();
-				TituloTrabalho = null;
-			}
-
-			if (UsernameText != null) {
-				UsernameText.Dispose ();
-				UsernameText = null;
-			}
-
-			if (PasswordText != null) {
-				PasswordText.Dispose ();
-				PasswordText = null;
-			}
-
-			if (LoginLabel != null) {
-				LoginLabel.Dispose ();
-				LoginLabel = null;
-			}
-
-			if (TrabalhosView != null) {
-				TrabalhosView.Dispose ();
-				TrabalhosView = null;
-			}
-
-			if (LogoutButton != null) {
-				LogoutButton.Dispose ();
-				LogoutButton = null;
-			}
-
-			if (LoginButton != null) {
-				LoginButton.Dispose ();
-				LoginButton = null;
-			}
-
-			if (TrabalhosPop != null) {
-				TrabalhosPop.Dispose ();
-				TrabalhosPop = null;
-			}
-
-			if (NovoTrabalhoTitulo != null) {
-				NovoTrabalhoTitulo.Dispose ();
-				NovoTrabalhoTitulo = null;
-			}
-
 			if (NovoTrabalhoDescricao != null) {
 				NovoTrabalhoDescricao.Dispose ();
 				NovoTrabalhoDescricao = null;
-			}
-
-			if (NovoTrabalhoInicio != null) {
-				NovoTrabalhoInicio.Dispose ();
-				NovoTrabalhoInicio = null;
 			}
 
 			if (NovoTrabalhoFim != null) {
@@ -277,9 +321,29 @@ namespace Mac
 				NovoTrabalhoFim = null;
 			}
 
-			if (CheckFim != null) {
-				CheckFim.Dispose ();
-				CheckFim = null;
+			if (NovoTrabalhoInicio != null) {
+				NovoTrabalhoInicio.Dispose ();
+				NovoTrabalhoInicio = null;
+			}
+
+			if (NovoTrabalhoTitulo != null) {
+				NovoTrabalhoTitulo.Dispose ();
+				NovoTrabalhoTitulo = null;
+			}
+
+			if (PasswordText != null) {
+				PasswordText.Dispose ();
+				PasswordText = null;
+			}
+
+			if (RemoverTrabalhoButton != null) {
+				RemoverTrabalhoButton.Dispose ();
+				RemoverTrabalhoButton = null;
+			}
+
+			if (TarefasPop != null) {
+				TarefasPop.Dispose ();
+				TarefasPop = null;
 			}
 
 			if (TarefasView != null) {
@@ -287,19 +351,79 @@ namespace Mac
 				TarefasView = null;
 			}
 
-			if (DataFimTrabalho != null) {
-				DataFimTrabalho.Dispose ();
-				DataFimTrabalho = null;
+			if (TituloLabel != null) {
+				TituloLabel.Dispose ();
+				TituloLabel = null;
 			}
 
-			if (DataInicioTrabalho != null) {
-				DataInicioTrabalho.Dispose ();
-				DataInicioTrabalho = null;
+			if (TituloTrabalho != null) {
+				TituloTrabalho.Dispose ();
+				TituloTrabalho = null;
 			}
 
-			if (DescricaoTrabalho != null) {
-				DescricaoTrabalho.Dispose ();
-				DescricaoTrabalho = null;
+			if (TrabalhosPop != null) {
+				TrabalhosPop.Dispose ();
+				TrabalhosPop = null;
+			}
+
+			if (TrabalhosView != null) {
+				TrabalhosView.Dispose ();
+				TrabalhosView = null;
+			}
+
+			if (UsernameText != null) {
+				UsernameText.Dispose ();
+				UsernameText = null;
+			}
+
+			if (EditarTarefaButton != null) {
+				EditarTarefaButton.Dispose ();
+				EditarTarefaButton = null;
+			}
+
+			if (RemoverTarefaButton != null) {
+				RemoverTarefaButton.Dispose ();
+				RemoverTarefaButton = null;
+			}
+
+			if (ConcluirTarefaButton != null) {
+				ConcluirTarefaButton.Dispose ();
+				ConcluirTarefaButton = null;
+			}
+
+			if (VisualizarTarefasButton != null) {
+				VisualizarTarefasButton.Dispose ();
+				VisualizarTarefasButton = null;
+			}
+
+			if (VisualizarDescricaoTarefaText != null) {
+				VisualizarDescricaoTarefaText.Dispose ();
+				VisualizarDescricaoTarefaText = null;
+			}
+
+			if (ConcluidoTarefaLabel != null) {
+				ConcluidoTarefaLabel.Dispose ();
+				ConcluidoTarefaLabel = null;
+			}
+
+			if (EditarRemoverTarefaLabel != null) {
+				EditarRemoverTarefaLabel.Dispose ();
+				EditarRemoverTarefaLabel = null;
+			}
+
+			if (VisualizarTituloTarefaText != null) {
+				VisualizarTituloTarefaText.Dispose ();
+				VisualizarTituloTarefaText = null;
+			}
+
+			if (GravarTarefaButton != null) {
+				GravarTarefaButton.Dispose ();
+				GravarTarefaButton = null;
+			}
+
+			if (AddTarefaLabel != null) {
+				AddTarefaLabel.Dispose ();
+				AddTarefaLabel = null;
 			}
 		}
 	}

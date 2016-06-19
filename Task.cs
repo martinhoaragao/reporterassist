@@ -14,6 +14,7 @@ namespace Shared
 			title = null;
 			description = null;
 			state = new State();
+			state.Type = "nao concluido";
 		}
 
 		public Task(int _id, string _title)
@@ -21,6 +22,16 @@ namespace Shared
 			id = _id;
 			title = _title;
 			state = new State();
+			state.Type = "nao concluido";
+		}
+
+		public Task(int _id, string _title, string _description, State _state)
+		{
+			id = _id;
+			title = _title;
+			description = _description;
+			state = new State();
+			state.Type = _state.Type;
 		}
 
 		public Task(int _id, string _title, string _description)
@@ -29,6 +40,7 @@ namespace Shared
 			title = _title;
 			description = _description;
 			state = new State();
+			state.Type = "nao concluido";
 		}
 
 		public Task(int _id, string _title, string _description, State _state)
@@ -36,7 +48,7 @@ namespace Shared
 			id = _id;
 			title = _title;
 			description = _description;
-			state = _state;
+			state.Type = _state.Type;
 		}
 
 		public Task(Task task)
