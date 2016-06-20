@@ -71,7 +71,7 @@ namespace Mac
 			GravarTarefaButton.Hidden = true;
 			EditarRemoverTarefaLabel.Hidden = true;
 
-			AnexosPop.RemoveAllItems();
+			//AnexosPop.RemoveAllItems();
 			TrabalhosPop.RemoveAllItems();
 			TarefasPop.RemoveAllItems();
 		}

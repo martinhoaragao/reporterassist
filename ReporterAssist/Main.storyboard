@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <scenes>
@@ -1264,14 +1263,22 @@
                                                                 <subviews>
                                                                     <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pV3-w4-eqC">
                                                                         <rect key="frame" x="100" y="135" width="380" height="26"/>
-                                                                        <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="pyJ-Ta-eg0" id="chd-g7-CPY">
+                                                                        <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="chd-g7-CPY">
                                                                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                                             <font key="font" metaFont="menu"/>
-                                                                            <menu key="menu" id="cgp-cU-TCa">
+                                                                            <menu key="menu" id="cgp-cU-TCa"/>
+                                                                        </popUpButtonCell>
+                                                                    </popUpButton>
+                                                                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gIU-VR-IQY">
+                                                                        <rect key="frame" x="100" y="135" width="380" height="26"/>
+                                                                        <popUpButtonCell key="cell" type="push" title="Imagem 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="ISx-KS-eED" id="LT3-Zv-sQI">
+                                                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                                            <font key="font" metaFont="menu"/>
+                                                                            <menu key="menu" id="ugI-An-nJh">
                                                                                 <items>
-                                                                                    <menuItem title="Item 1" state="on" id="pyJ-Ta-eg0"/>
-                                                                                    <menuItem title="Item 2" id="bXd-vP-opf"/>
-                                                                                    <menuItem title="Item 3" id="FEi-Ax-tNd"/>
+                                                                                    <menuItem title="Imagem 1" state="on" id="ISx-KS-eED"/>
+                                                                                    <menuItem title="Gravação 1" id="5cx-ON-Tyj"/>
+                                                                                    <menuItem title="Video1" id="j60-17-bsD"/>
                                                                                 </items>
                                                                             </menu>
                                                                         </popUpButtonCell>
