@@ -47,6 +47,9 @@ namespace RecordAudio {
 			stopButton.Click 							+= stopButtonClicked;
 			timestampButton.Click	 				+= timestampButtonClicked;
 			timestampsListView.ItemClick 	+= timestampClicked;
+			
+			var timestampsTextView 	= view.FindViewById<TextView>(Resource.Id.textView1);
+			timestampsTextView.Gravity = GravityFlags.Center;
 
 			// Stop button and timestamp button should be disabled in the beggining.
 			stopButton.Enabled 			= false;
@@ -113,8 +116,8 @@ namespace RecordAudio {
       string[] aux_stamps = new string[stamps.Count];
       for (int i = 0; i < stamps.Count; i++)
         aux_stamps[i] = stamps[i].ToString();
-      	IListAdapter adapter 				= new ArrayAdapter<string>(Context, 
-				Android.Resource.Layout.SimpleListItem1, aux_stamps);
+      	IListAdapter adapter 				= new ArrayAdapter<string>(Application.Context, 
+					Android.Resource.Layout.SimpleListItem1, aux_stamps);
       timestampsListView.Adapter 	= adapter;
 
       // Write timestamps to file.

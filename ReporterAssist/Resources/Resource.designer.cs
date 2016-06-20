@@ -431,11 +431,11 @@ namespace RecordAudio
 			// aapt resource value: 0x7f09000d
 			public const int linearLayout = 2131296269;
 			
-			// aapt resource value: 0x7f090010
-			public const int mapContainer = 2131296272;
-			
 			// aapt resource value: 0x7f090011
-			public const int markLocationButton = 2131296273;
+			public const int mapContainer = 2131296273;
+			
+			// aapt resource value: 0x7f090010
+			public const int markLocationButton = 2131296272;
 			
 			// aapt resource value: 0x7f090001
 			public const int none = 2131296257;

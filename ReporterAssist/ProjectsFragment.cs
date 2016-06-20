@@ -25,7 +25,11 @@ namespace RecordAudio {
 		public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 			View view = inflater.Inflate(Resource.Layout.ProjectsFragment, null);
 
-			projectsListView = view.FindViewById<ListView>(Resource.Id.projectsListView);
+			projectsListView 					= view.FindViewById<ListView>(Resource.Id.projectsListView);
+			IListAdapter adapter 			= new ArrayAdapter<string>(Application.Context,
+					Android.Resource.Layout.SimpleListItem1, 
+					new string[] { "Reportagem Tua", "Entrevista Orlando Belo", "Apresentação LI4" });
+			projectsListView.Adapter 	= adapter;
 
 			return view;
 		}
