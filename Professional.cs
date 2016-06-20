@@ -89,6 +89,11 @@ namespace Shared
 			projects[idProject].AddTask(title, note, state);
 		}
 
+		public void AddTaskDB(int idProject, string title, string note, string state)
+		{
+			projects[idProject].AddTaskDB(title, note, state);
+		}
+
 		public void AddTask(int idProject, Task task)
 		{
 			projects[idProject].AddTask(task);

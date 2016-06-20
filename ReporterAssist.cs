@@ -106,6 +106,11 @@ namespace Shared
 			users[connectedUser].AddTask(idProject, title, note, state);
 		}
 
+		public void AddTaskDB(int idProject, string title, string note, string type)
+		{
+			users[connectedUser].AddTaskDB(idProject, title, note, type);
+		}
+
 		public void AddTask(int idProject, Task task)
 		{
 			users[connectedUser].AddTask(idProject, task);

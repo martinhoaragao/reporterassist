@@ -177,6 +177,7 @@ namespace Mac
 				LoginLabel.StringValue = "Autenticado com sucesso " + teste;
 				LoginLabel.Hidden = false;
 
+				updateAnexosPop();
 				updateTrabalhosPopUp();
 			}
 			else {
@@ -441,7 +442,7 @@ namespace Mac
 					if (tituloUsado.Equals(proj.Title))
 					{
 						idProject = proj.Id;
-						reporter.AddTask(idProject, NovaTarefaTitulo.StringValue, NovaTarefaDescricao.StringValue, "nao concluido");
+						reporter.AddTaskDB(idProject, NovaTarefaTitulo.StringValue, NovaTarefaDescricao.StringValue, "nao concluido");
 						AddTarefaLabel.StringValue = "Tarefa adicionado com sucesso";
 						break;
 					}
