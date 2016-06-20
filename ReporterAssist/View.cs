@@ -71,7 +71,7 @@ namespace Mac
 			GravarTarefaButton.Hidden = true;
 			EditarRemoverTarefaLabel.Hidden = true;
 
-			//AnexosPop.RemoveAllItems();
+			AnexosPop.RemoveAllItems();
 			TrabalhosPop.RemoveAllItems();
 			TarefasPop.RemoveAllItems();
 		}
@@ -157,21 +157,24 @@ namespace Mac
 
 		partial void LoginAction(NSObject sender)
 		{
-			reporter = new Shared.ReporterAssist();
+			ReportAssistADO ra = new ReportAssistADO();
+			reporter = ra.ReporterAssist;
 			string user = UsernameText.StringValue;
 			string pass = PasswordText.StringValue;
-
-			//Fazer login FIXIT
+			reporter.LogIn(user, pass);
 
 			//login bem sucedido
-			logado = true;
-
+			if (pass.Equals(pass))
+			{
+				logado = true;
+			}
 			if (logado)
 			{
 				TrabalhosView.Hidden = false;
 				LoginButton.Hidden = true;
 				LogoutButton.Hidden = false;
-				LoginLabel.StringValue = "Autenticado com sucesso";
+				int teste = reporter.Projects.Count;
+				LoginLabel.StringValue = "Autenticado com sucesso " + teste;
 				LoginLabel.Hidden = false;
 
 				updateTrabalhosPopUp();

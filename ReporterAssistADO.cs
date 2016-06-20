@@ -14,29 +14,28 @@ namespace Shared
     public class ReportAssistADO
     {
         private static ReporterAssist reporterAssist = new ReporterAssist();
-        SqlConnection conn;
+        //SqlConnection conn;
 
-		ReportAssistADO(string ip)
+		public ReportAssistADO()
 		{
-			SqlConnection conn = new SqlConnection("Server =." + ip + ";Database=reporterassist;UID=reporter;Password=a1912Adsma10321aM");
+			SqlConnection conn = new SqlConnection("Server =10.0.2.5;Database=reporterassist;UID=reporter;Password=a1912Adsma10321aM");
 			conn.Open();
 
-			AddUsers();
-			AddProjects();
-			AddTasks();
-			AddAudios();
-			AddImages();
-			AddVideos();
-			AddTimeStamps();
-			AddCoordinates();
-
+			AddUsers(conn);
+			AddProjects(conn);
+			AddTasks(conn);
+			AddAudios(conn);
+			AddImages(conn);
+			AddVideos(conn);
+			AddTimeStamps(conn);
+			AddCoordinates(conn);
 		}
 
-        private void AddUsers()
+        static void AddUsers(SqlConnection conn)
         {
-            int id;
+            //int id;
             string name, mail, password;
-
+            //conn.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM Profissional", conn);
             SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.SequentialAccess);
             while (reader.Read())
@@ -44,19 +43,18 @@ namespace Shared
                 name = reader.GetString(0);
                 mail = reader.GetString(1);
                 password = reader.GetString(2);
-                id = reader.GetInt32(3);
                 reporterAssist.AddUser(mail, password, name);
             }
             reader.Close();
             conn.Close();
         }
 
-        private void AddProjects()
+        static void AddProjects(SqlConnection conn)
         {
             int id;
             string title, note, type, mail;
             DateTime dateI, dateF;
-
+            conn.Open();
             SqlCommand cmd = new SqlCommand(
                 "SELECT * FROM Trabalho AS T INNER JOIN Estado as E ON " +
                 "T.Estado_idEstado = E.idEstado INNER JOIN Profissional " +
@@ -70,20 +68,21 @@ namespace Shared
                 dateI = reader.GetDateTime(5);
                 dateF = reader.GetDateTime(6);
                 type = reader.GetString(8);
-
-				Project project = new Project(id, title, note, dateI, dateF, new State(type));
-
-				reporterAssist.AddProject(project);
-            }
-            reader.Close();
+                mail = reader.GetString(10);
+                reporterAssist.AddProject(id, title, note, dateI, dateF, type, mail);
+				//Console.WriteLine("Title ->" + title);
+            	
+			}
+			Console.WriteLine("Nr de proje " + reporterAssist.Projects.Count);
+			reader.Close();
             conn.Close();
         }
 
-        private void AddTasks()
+        static void AddTasks(SqlConnection conn)
         {
             int id, idProject;
             string title, note, type, mail;
-
+            conn.Open();
             SqlCommand cmd = new SqlCommand(
                 "SELECT * FROM Tarefa AS T INNER JOIN Estado as E ON " +
                 "T.Estado_idEstado = E.idEstado INNER JOIN Trabalho AS " +
@@ -98,18 +97,15 @@ namespace Shared
                 idProject = reader.GetInt32(4);
                 type = reader.GetString(6);
                 mail = reader.GetString(15);
-
-				Task task = new Task(id, title, note, new State(type));
-
-                reporterAssist.AddTask(idProject, task);
+                reporterAssist.AddTask(id, idProject, title, note, type, mail);
             }
             reader.Close();
             conn.Close();
         }
 
-        private void AddAudios()
+        static void AddAudios(SqlConnection conn)
         {
-
+            conn.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM Audio INNER JOIN Trabalho AS T " +
                 "ON Audio.Trabalho_idTrabalho = T.idTrabalho INNER JOIN PROFISSIONAL AS P " +
                 "ON T.Profissional_idProfissional = P.idProfissional", conn);
@@ -167,15 +163,15 @@ namespace Shared
                 stream.Close();
                 idProject = reader.GetInt32(2);
                 mail = reader.GetString(11);
-                reporterAssist.AddAudio(path, idProject);
+                reporterAssist.AddAudio(id, path, idProject, mail);
             }
             reader.Close();
             conn.Close();
         }
 
-        private void AddImages()
+        static void AddImages(SqlConnection conn)
         {
-
+            conn.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM Imagem INNER JOIN Trabalho AS T " +
                 "ON Imagem.Trabalho_idTrabalho = T.idTrabalho INNER JOIN PROFISSIONAL AS P " +
                 "ON T.Profissional_idProfissional = P.idProfissional", conn);
@@ -233,15 +229,15 @@ namespace Shared
                 stream.Close();
                 idProject = reader.GetInt32(2);
                 mail = reader.GetString(11);
-                reporterAssist.AddImage(path, idProject);
+                reporterAssist.AddImage(id, path, idProject, mail);
             }
             reader.Close();
             conn.Close();
         }
 
-        private void AddVideos()
+        static void AddVideos(SqlConnection conn)
         {
-
+            conn.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM Video INNER JOIN Trabalho AS T " +
                 "ON Video.Trabalho_idTrabalho = T.idTrabalho INNER JOIN PROFISSIONAL AS P " +
                 "ON T.Profissional_idProfissional = P.idProfissional", conn);
@@ -298,18 +294,19 @@ namespace Shared
                 writer.Close();
                 stream.Close();
                 idProject = reader.GetInt32(2);
-                reporterAssist.AddVideo(path, idProject);
+                mail = reader.GetString(11);
+                reporterAssist.AddVideo(id, path, idProject, mail);
             }
             reader.Close();
             conn.Close();
         }
 
-        private void AddTimeStamps()
+        static void AddTimeStamps(SqlConnection conn)
         {
             int idAudio, idProject;
             string mail;
             double timestamp;
-
+            conn.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM TIMESTAMP AS TI INNER JOIN " +
                 "Audio AS A ON TI.Audio_idAudio = A.idAudio INNER JOIN Trabalho AS T " +
                 "ON A.Trabalho_idTrabalho = T.idTrabalho INNER JOIN PROFISSIONAL AS " +
@@ -322,19 +319,19 @@ namespace Shared
                 idProject = reader.GetInt32(4);
                 mail = reader.GetString(13);
                 float time = (float)timestamp;
-                reporterAssist.AddTimeStamp(time, idAudio, idProject);
+                reporterAssist.AddTimeStamp(time, idAudio, idProject, mail);
             }
             reader.Close();
             conn.Close();
         }
 
-        private void AddCoordinates()
+        static void AddCoordinates(SqlConnection conn)
         {
             int idProject;
             string mail;
             double lat, lon;
             DateTime date;
-
+            conn.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM Coordenada AS C " +
                 "INNER JOIN Trabalho AS T " +
                 "ON C.Trabalho_idTrabalho = T.idTrabalho " +
@@ -350,10 +347,18 @@ namespace Shared
                 mail = reader.GetString(12);
                 float lat1 = (float)lat;
                 float lon1 = (float)lon;
-                reporterAssist.AddCoordinate(idProject, lat1, lon1, date);
+                reporterAssist.AddCoordinate(idProject, lat1, lon1, date, mail);
             }
             reader.Close();
             conn.Close();
         }
+
+		public ReporterAssist ReporterAssist
+		{
+			get
+			{
+				return reporterAssist;
+			}
+		}
     }
 }
