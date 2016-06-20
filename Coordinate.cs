@@ -41,6 +41,19 @@ namespace Shared
 				lon = value;
 			}
 		}
+		public DateTime Date
+		{
+			get
+			{
+				return date;
+			}
+			set
+			{
+				date = value;
+			}
+
+		}
+
 	}
 }
 
