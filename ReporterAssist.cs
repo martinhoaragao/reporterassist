@@ -40,7 +40,7 @@ namespace Shared
 		public void AddProject(int id, string title, string note, DateTime begin, DateTime end, string type, string mail)
 		{
 			State state = new State(type);
-			users[mail].AddProject(id, title, note, begin, end, state);
+			users[mail].AddProject(id,title, note, begin, end, state);
 			//Console.WriteLine("Nr " + users[mail].Projects.Count);
 		}
 
@@ -50,6 +50,11 @@ namespace Shared
 		}
 
 		public void AddProject(string title, string description, DateTime begin, DateTime end, State state)
+		{
+			users[connectedUser].AddProject(title, description, begin, end, state);
+		}
+
+		public void AddProjectDB(string title, string description, DateTime begin, DateTime end, State state)
 		{
 			users[connectedUser].AddProjectDB(title, description, begin, end, state.Type);
 		}
@@ -88,6 +93,12 @@ namespace Shared
             State state = new State(type);
             users[mail].AddTask(id, idProject, title, note, state);
         }
+
+		public void AddTaskNDB(int id, int idProject, string title, string note, string type, string mail)
+		{
+			State state = new State(type);
+			users[mail].AddTaskNDB(id, idProject, title, note, state);
+		}
 
         public void AddTask(int idProject, string title, string note, string type)
 		{

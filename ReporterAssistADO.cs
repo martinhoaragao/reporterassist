@@ -97,7 +97,7 @@ namespace Shared
                 idProject = reader.GetInt32(4);
                 type = reader.GetString(6);
                 mail = reader.GetString(15);
-                reporterAssist.AddTask(id, idProject, title, note, type, mail);
+                reporterAssist.AddTaskNDB(id, idProject, title, note, type, mail);
             }
             reader.Close();
             conn.Close();

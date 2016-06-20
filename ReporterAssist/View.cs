@@ -235,7 +235,7 @@ namespace Mac
 					}
 					else state.Type = "a fazer";
 
-					reporter.AddProject(titulo, descricao, inicio, fim, state);
+					reporter.AddProjectDB(titulo, descricao, inicio, fim, state);
 					updateTrabalhosPopUp();
 					AdicionarTrabalhoLabel.StringValue = "Trabalho Adicionado com sucesso";
 					AdicionarTrabalhoLabel.Hidden = false;

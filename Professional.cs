@@ -125,6 +125,11 @@ namespace Shared
 			projects[idProject].AddTaskDB(title, note, state.Type);
         }
 
+		public void AddTaskNDB(int id, int idProject, string title, string note, State state)
+		{
+			projects[idProject].AddTask(id, title, note, state);
+		}
+
         public void AddAudio(int id, string path, int idProject)
         {
             projects[idProject].AddAudio(id, path);
